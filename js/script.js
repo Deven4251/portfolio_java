@@ -369,7 +369,7 @@ function initTabs() {
                 const techTags = targetPanel.querySelectorAll('.tech-tag');
                 techTags.forEach((tag, index) => {
                     tag.style.animationDelay = `${index * 0.1}s`;
-                    tag.style.animation = 'slideInUp 0.5s ease forwards';
+                    tag.style.animation = 'slideInUp 0.2s ease forwards';
                 });
             }
         });
