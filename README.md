@@ -44,8 +44,7 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
     # experience.html
     # technologies.html
     # awards.html
- ###📂 css
-       
+ ###📂 css 
     # index.css
     # projects.css
     # experience.css
