@@ -36,8 +36,6 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
    git clone https://github.com/yourusername/portfolio.git
    cd portfolio
 ---
-
-## 📂 Project Structure
 ## 📂 Project Structure
 
 - portfolio/
