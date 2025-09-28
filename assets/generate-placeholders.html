@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .placeholder {
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #333;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Placeholder Image Generator</h1>
+    <p>Click the buttons below to generate and download placeholder images for your portfolio.</p>
+
+    <div class="placeholder">
+        <h3>Profile Image (350x350)</h3>
+        <canvas id="profile" width="350" height="350"></canvas>
+        <br>
+        <button onclick="generateProfile()">Generate Profile Image</button>
+        <button onclick="downloadImage('profile', 'profile.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 1 - E-Commerce (400x200)</h3>
+        <canvas id="project1" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project1', 'E-Commerce Platform')">Generate</button>
+        <button onclick="downloadImage('project1', 'project1.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 2 - Task Management (400x200)</h3>
+        <canvas id="project2" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project2', 'Task Management')">Generate</button>
+        <button onclick="downloadImage('project2', 'project2.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 3 - Banking API (400x200)</h3>
+        <canvas id="project3" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project3', 'Banking API')">Generate</button>
+        <button onclick="downloadImage('project3', 'project3.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 4 - Weather Dashboard (400x200)</h3>
+        <canvas id="project4" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project4', 'Weather Dashboard')">Generate</button>
+        <button onclick="downloadImage('project4', 'project4.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 5 - Social Media API (400x200)</h3>
+        <canvas id="project5" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project5', 'Social Media API')">Generate</button>
+        <button onclick="downloadImage('project5', 'project5.jpg')">Download</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Project 6 - Inventory Management (400x200)</h3>
+        <canvas id="project6" width="400" height="200"></canvas>
+        <br>
+        <button onclick="generateProject('project6', 'Inventory Management')">Generate</button>
+        <button onclick="downloadImage('project6', 'project6.jpg')">Download</button>
+    </div>
+
+    <script>
+        function generateProfile() {
+            const canvas = document.getElementById('profile');
+            const ctx = canvas.getContext('2d');
+
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 350, 350);
+            gradient.addColorStop(0, '#00d4ff');
+            gradient.addColorStop(1, '#ff6b35');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 350, 350);
+
+            // Circle for profile
+            ctx.beginPath();
+            ctx.arc(175, 175, 120, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.fill();
+
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Profile', 175, 180);
+            ctx.font = '16px Arial';
+            ctx.fillText('Photo', 175, 200);
+        }
+
+        function generateProject(canvasId, title) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            // Random gradient background
+            const colors = [
+                ['#00d4ff', '#ff6b35'],
+                ['#ff6b35', '#00d4ff'],
+                ['#6db33f', '#00d4ff'],
+                ['#ff9900', '#00d4ff'],
+                ['#2496ed', '#ff6b35'],
+                ['#326ce5', '#00d4ff']
+            ];
+
+            const colorPair = colors[Math.floor(Math.random() * colors.length)];
+            const gradient = ctx.createLinearGradient(0, 0, 400, 200);
+            gradient.addColorStop(0, colorPair[0]);
+            gradient.addColorStop(1, colorPair[1]);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 200);
+
+            // Decorative elements
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.fillRect(20, 20, 360, 160);
+
+            // Title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(title, 200, 100);
+
+            // Subtitle
+            ctx.font = '14px Arial';
+            ctx.fillText('Project Screenshot', 200, 120);
+
+            // Tech stack
+            ctx.font = '12px Arial';
+            ctx.fillText('Java • Spring Boot • React', 200, 140);
+        }
+
+        function downloadImage(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        }
+
+        // Generate all images on load
+        window.onload = function() {
+            generateProfile();
+            generateProject('project1', 'E-Commerce Platform');
+            generateProject('project2', 'Task Management');
+            generateProject('project3', 'Banking API');
+            generateProject('project4', 'Weather Dashboard');
+            generateProject('project5', 'Social Media API');
+            generateProject('project6', 'Inventory Management');
+        };
+    </script>
+</body>
+</html>

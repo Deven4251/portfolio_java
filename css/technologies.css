@@ -1,0 +1,382 @@
+/* Technologies Page Specific Styles */
+
+.technologies {
+    background:
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.technologies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    animation: techPulse 8s ease-in-out infinite;
+}
+
+.technologies::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.03) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(255, 107, 53, 0.03) 50%, transparent 70%);
+    pointer-events: none;
+    animation: techScan 12s linear infinite;
+}
+
+@keyframes techPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes techScan {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.technologies .container {
+    position: relative;
+    z-index: 2;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tech-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #00d4ff, #ff6b35);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tech-category:hover::before {
+    transform: scaleX(1);
+}
+
+.tech-category:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 212, 255, 0.1);
+    border-color: #00d4ff;
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(135deg, #00d4ff, #ff6b35);
+    border-radius: 1px;
+}
+
+.tech-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 53, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-item:hover::before {
+    opacity: 1;
+}
+
+.tech-item:hover {
+    transform: scale(1.05) translateY(-5px);
+    border-color: #00d4ff;
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.tech-item i {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.tech-item:hover i {
+    color: #ff6b35;
+    transform: scale(1.2);
+}
+
+.tech-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.tech-item:hover span {
+    color: #ffffff;
+}
+
+/* Special styling for specific tech icons */
+.tech-item:nth-child(1) i {
+    color: #f89820; /* Java orange */
+}
+
+.tech-item:nth-child(2) i {
+    color: #f7df1e; /* JavaScript yellow */
+}
+
+.tech-item:nth-child(3) i {
+    color: #3776ab; /* Python blue */
+}
+
+.tech-item:nth-child(4) i {
+    color: #3178c6; /* TypeScript blue */
+}
+
+/* Spring Boot specific styling */
+.tech-item:has(i.bxl-spring-boot) i {
+    color: #6db33f;
+}
+
+/* React specific styling */
+.tech-item:has(i.bxl-react) i {
+    color: #61dafb;
+}
+
+/* Node.js specific styling */
+.tech-item:has(i.bxl-nodejs) i {
+    color: #339933;
+}
+
+/* Angular specific styling */
+.tech-item:has(i.bxl-angular) i {
+    color: #dd0031;
+}
+
+/* Database specific styling */
+.tech-item:has(i.bxs-data) i {
+    color: #336791;
+}
+
+/* Git specific styling */
+.tech-item:has(i.bxl-git) i {
+    color: #f05032;
+}
+
+/* Docker specific styling */
+.tech-item:has(i.bxl-docker) i {
+    color: #2496ed;
+}
+
+/* Kubernetes specific styling */
+.tech-item:has(i.bxl-kubernetes) i {
+    color: #326ce5;
+}
+
+/* AWS specific styling */
+.tech-item:has(i.bxl-aws) i {
+    color: #ff9900;
+}
+
+/* IntelliJ specific styling */
+.tech-item:has(i.bxl-intellij) i {
+    color: #000000;
+}
+
+/* VS Code specific styling */
+.tech-item:has(i.bxl-visual-studio) i {
+    color: #007acc;
+}
+
+/* Postman specific styling */
+.tech-item:has(i.bxl-postman) i {
+    color: #ff6c37;
+}
+
+/* Jenkins specific styling */
+.tech-item:has(i.bxl-jenkins) i {
+    color: #d24939;
+}
+
+/* Testing specific styling */
+.tech-item:has(i.bx-test-tube) i {
+    color: #4caf50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .technologies-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tech-category {
+        padding: 1.5rem;
+    }
+
+    .tech-items {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .tech-item {
+        padding: 1rem 0.5rem;
+    }
+
+    .tech-item i {
+        font-size: 2rem;
+    }
+
+    .tech-item span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-item {
+        padding: 1rem 0.5rem;
+    }
+
+    .tech-item i {
+        font-size: 1.8rem;
+    }
+
+    .tech-item span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Animation delays for staggered effect */
+.tech-category:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.tech-category:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.tech-category:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tech-category:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.tech-category:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.tech-category:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Pulse animation for tech items */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+    }
+}
+
+.tech-item:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Loading animation */
+.tech-category {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.tech-category.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
