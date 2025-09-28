@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Devendra Mishra - Java Developer Portfolio
 
 A modern, responsive portfolio website showcasing Java development skills and projects.
@@ -92,22 +92,4 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
    ```bash
    git clone https://github.com/yourusername/portfolio.git
    cd portfolio
----
-## 📂 Project Structure
-
-- portfolio/
-  - html/
-    - index.html
-    - projects.html
-    - experience.html
-    - technologies.html
-    - awards.html
-  - css/
-    - index.css
-    - projects.css
-    - experience.css
-    - technologies.css
-    - awards.css
-  - js/
-    - script.js
->>>>>>> c720fabb58dfd18dfd397470eecc18be751db9c3
+ c720fabb58dfd18dfd397470eecc18be751db9c3
