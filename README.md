@@ -38,20 +38,20 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
 ---
 
 ## 📂 Project Structure
-portfolio/
-├── 📂 html
-│ ├── index.html
-│ ├── projects.html
-│ ├── experience.html
-│ ├── technologies.html
-│ └── awards.html
-│
-├── 📂 css
-│ ├── index.css
-│ ├── projects.css
-│ ├── experience.css
-│ ├── technologies.css
-│ └── awards.css
-│
-├── 📂 js
-   └── script.js
+## 📂 Project Structure
+
+- portfolio/
+  - html/
+    - index.html
+    - projects.html
+    - experience.html
+    - technologies.html
+    - awards.html
+  - css/
+    - index.css
+    - projects.css
+    - experience.css
+    - technologies.css
+    - awards.css
+  - js/
+    - script.js
