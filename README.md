@@ -38,6 +38,6 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
 ---
 
 ## 📂 Project Structure
- # 📂 html
+ ### 📂 html
  # 📂 css
  # 📂 js
