@@ -1,14 +1,14 @@
-/* Galaxy Awards Page - Futuristic Constellation Style */
+/* Achievement Badges Page - Compact Award Gallery Theme */
 
-.awards-galaxy {
+.awards-badges {
     background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
     position: relative;
     overflow: hidden;
     min-height: 100vh;
 }
 
-/* Galaxy Background Effects */
-.awards-galaxy::before {
+/* Optimized Background Effects */
+.awards-badges::before {
     content: '';
     position: absolute;
     top: 0;
@@ -16,33 +16,18 @@
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.05) 0%, transparent 70%);
+        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
     pointer-events: none;
-    animation: galaxyRotate 60s linear infinite;
+    animation: badgePulse 20s linear infinite;
 }
 
-.awards-galaxy::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(ellipse at 30% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.03) 0%, transparent 60%);
-    pointer-events: none;
-    animation: galaxyRotate 80s linear infinite reverse;
-}
-
-@keyframes galaxyRotate {
+@keyframes badgePulse {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-.awards-galaxy .container {
+.awards-badges .container {
     position: relative;
     z-index: 2;
     padding-top: 2rem;
@@ -53,11 +38,11 @@
     padding-right: 0;
 }
 
-/* Galaxy Container */
-.galaxy-container {
+/* Badge Container */
+.badge-container {
     position: relative;
     width: 100vw;
-    height: 80vh;
+    height: 70vh;
     margin: 4rem 0 2rem;
     border-radius: 0;
     overflow: hidden;
@@ -65,8 +50,8 @@
     transform: translateX(-50%);
 }
 
-/* Background Stars */
-.background-stars {
+/* Background Pattern */
+.badge-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,36 +60,29 @@
     pointer-events: none;
 }
 
-.star {
+.pattern-dot {
     position: absolute;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    animation: twinkle 3s ease-in-out infinite;
+    animation: dotTwinkle 3s ease-in-out infinite;
 }
 
-.star-1 { width: 2px; height: 2px; top: 10%; left: 10%; animation-delay: 0s; }
-.star-2 { width: 1px; height: 1px; top: 20%; left: 80%; animation-delay: 0.5s; }
-.star-3 { width: 3px; height: 3px; top: 30%; left: 30%; animation-delay: 1s; }
-.star-4 { width: 1px; height: 1px; top: 40%; left: 70%; animation-delay: 1.5s; }
-.star-5 { width: 2px; height: 2px; top: 50%; left: 20%; animation-delay: 2s; }
-.star-6 { width: 1px; height: 1px; top: 60%; left: 90%; animation-delay: 2.5s; }
-.star-7 { width: 2px; height: 2px; top: 70%; left: 40%; animation-delay: 3s; }
-.star-8 { width: 1px; height: 1px; top: 80%; left: 60%; animation-delay: 3.5s; }
-.star-9 { width: 3px; height: 3px; top: 15%; left: 60%; animation-delay: 4s; }
-.star-10 { width: 1px; height: 1px; top: 35%; left: 15%; animation-delay: 4.5s; }
-.star-11 { width: 2px; height: 2px; top: 55%; left: 85%; animation-delay: 5s; }
-.star-12 { width: 1px; height: 1px; top: 75%; left: 25%; animation-delay: 5.5s; }
-.star-13 { width: 2px; height: 2px; top: 25%; left: 45%; animation-delay: 6s; }
-.star-14 { width: 1px; height: 1px; top: 65%; left: 55%; animation-delay: 6.5s; }
-.star-15 { width: 3px; height: 3px; top: 85%; left: 75%; animation-delay: 7s; }
+.pattern-1 { width: 3px; height: 3px; top: 10%; left: 15%; animation-delay: 0s; }
+.pattern-2 { width: 2px; height: 2px; top: 20%; left: 85%; animation-delay: 0.5s; }
+.pattern-3 { width: 4px; height: 4px; top: 30%; left: 25%; animation-delay: 1s; }
+.pattern-4 { width: 2px; height: 2px; top: 40%; left: 75%; animation-delay: 1.5s; }
+.pattern-5 { width: 3px; height: 3px; top: 50%; left: 10%; animation-delay: 2s; }
+.pattern-6 { width: 2px; height: 2px; top: 60%; left: 90%; animation-delay: 2.5s; }
+.pattern-7 { width: 3px; height: 3px; top: 70%; left: 35%; animation-delay: 3s; }
+.pattern-8 { width: 2px; height: 2px; top: 80%; left: 65%; animation-delay: 3.5s; }
 
-@keyframes twinkle {
+@keyframes dotTwinkle {
     0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+    50% { opacity: 1; transform: scale(1.1); }
 }
 
-/* Award Stars */
-.constellation {
+/* Badge Collection */
+.badge-collection {
     position: absolute;
     top: 0;
     left: 0;
@@ -112,115 +90,156 @@
     bottom: 0;
 }
 
-.award-star {
+.award-badge {
     position: absolute;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
 }
 
-.award-star:hover {
-    transform: scale(1.2);
+.award-badge:hover {
+    transform: scale(1.15);
     z-index: 20;
 }
 
-/* Star Sizes */
-.super-star {
-    width: 100px;
-    height: 100px;
-    animation: starPulse 2s ease-in-out infinite;
-}
-.major-star { width: 80px; height: 80px; }
-.medium-star { width: 60px; height: 60px; }
-.small-star { width: 40px; height: 40px; }
+/* Badge Sizes - Much More Compact */
+.main-badge { width: 80px; height: 80px; }
+.secondary-badge { width: 60px; height: 60px; }
+.small-badge { width: 45px; height: 45px; }
 
-/* Star Core */
-.star-core {
+/* Badge Frame */
+.badge-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #ff6b35 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    animation: badgeFloat 2s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Badge Ribbon */
+.badge-ribbon {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 16px;
+}
+
+.main-badge .badge-ribbon { width: 25px; height: 20px; top: -10px; }
+.small-badge .badge-ribbon { width: 15px; height: 12px; top: -6px; }
+
+.ribbon-top, .ribbon-bottom {
+    position: absolute;
+    background: linear-gradient(135deg, #ff6b35, #00d4ff);
+    border-radius: 2px;
+}
+
+.ribbon-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+}
+
+.ribbon-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.main-badge .ribbon-top, .main-badge .ribbon-bottom { height: 10px; }
+.small-badge .ribbon-top, .small-badge .ribbon-bottom { height: 6px; }
+
+/* Badge Center */
+.badge-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(0, 212, 255, 0.8) 50%, rgba(255, 107, 53, 0.6) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.6),
-        0 0 40px rgba(255, 107, 53, 0.4),
-        inset 0 0 20px rgba(255, 255, 255, 0.3);
-    animation: starPulse 4s ease-in-out infinite;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.star-core i {
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+/* Badge Icon */
+.badge-icon {
+    position: relative;
     z-index: 2;
 }
 
-.super-star .star-core i { font-size: 2.5rem; }
-.major-star .star-core i { font-size: 2rem; }
-.medium-star .star-core i { font-size: 1.5rem; }
-.small-star .star-core i { font-size: 1rem; }
-
-@keyframes starPulse {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow:
-            0 0 20px rgba(0, 212, 255, 0.6),
-            0 0 40px rgba(255, 107, 53, 0.4),
-            inset 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        box-shadow:
-            0 0 30px rgba(0, 212, 255, 0.8),
-            0 0 60px rgba(255, 107, 53, 0.6),
-            inset 0 0 30px rgba(255, 255, 255, 0.5);
-    }
+.badge-icon i {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
-/* Star Rings */
-.star-rings {
+.main-badge .badge-icon i { font-size: 1.6rem; }
+.secondary-badge .badge-icon i { font-size: 1.2rem; }
+.small-badge .badge-icon i { font-size: 0.9rem; }
+
+/* Badge Glow */
+.badge-glow {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-}
-
-.ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
     border-radius: 50%;
-    animation: ringRotate 8s linear infinite;
+    animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* Badge Rings - Optimized */
+.badge-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50%;
+    animation: ringRotate 4s linear infinite;
 }
 
 .ring-1 { width: 120%; height: 120%; animation-delay: 0s; }
-.ring-2 { width: 150%; height: 150%; animation-delay: 2s; }
-.ring-3 { width: 180%; height: 180%; animation-delay: 4s; }
+.ring-2 { width: 140%; height: 140%; animation-delay: 1s; }
+.ring-3 { width: 160%; height: 160%; animation-delay: 2s; }
 
 @keyframes ringRotate {
-    0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0.3; }
-    50% { opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) rotate(360deg); opacity: 0.3; }
+    0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0.4; }
+    50% { opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) rotate(360deg); opacity: 0.4; }
 }
 
-/* Star Particles */
-.star-particles {
+/* Badge Particles - Optimized */
+.badge-particles {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200%;
-    height: 200%;
+    width: 150%;
+    height: 150%;
 }
 
 .particle {
@@ -229,27 +248,27 @@
     height: 2px;
     background: rgba(0, 212, 255, 0.8);
     border-radius: 50%;
-    animation: particleFloat 6s ease-in-out infinite;
+    animation: particleFloat 2s ease-in-out infinite;
 }
 
 .particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
-.particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 1.5s; }
-.particle:nth-child(3) { top: 80%; left: 20%; animation-delay: 3s; }
-.particle:nth-child(4) { top: 80%; left: 80%; animation-delay: 4.5s; }
+.particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 0.5s; }
+.particle:nth-child(3) { top: 80%; left: 20%; animation-delay: 1s; }
+.particle:nth-child(4) { top: 80%; left: 80%; animation-delay: 1.5s; }
 
 @keyframes particleFloat {
     0%, 100% {
-        transform: translate(0, 0) scale(0.5);
-        opacity: 0.3;
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0.6;
     }
     50% {
-        transform: translate(20px, -20px) scale(1);
+        transform: translate(5px, -5px) scale(1);
         opacity: 1;
     }
 }
 
-/* Constellation Lines */
-.constellation-lines {
+/* Connection Lines - Optimized */
+.badge-connections {
     position: absolute;
     top: 0;
     left: 0;
@@ -259,14 +278,14 @@
     z-index: 1;
 }
 
-.constellation-path {
-    stroke-dasharray: 2, 2;
-    animation: pathFlow 10s linear infinite;
+.connection-path {
+    stroke-dasharray: 1, 1;
+    animation: connectionFlow 4s linear infinite;
 }
 
-@keyframes pathFlow {
+@keyframes connectionFlow {
     0% { stroke-dashoffset: 0; }
-    100% { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 5; }
 }
 
 /* Award Details Panel */
@@ -405,47 +424,45 @@
     font-family: 'Courier New', monospace;
 }
 
-/* Special Star Colors */
-.award-star[data-award="iitjava"] .star-core {
-    background: radial-gradient(circle, rgba(248, 152, 32, 0.9) 0%, rgba(255, 107, 53, 0.8) 50%, rgba(0, 212, 255, 0.6) 100%);
+/* Special Badge Colors */
+.award-badge[data-award="iitjava"] .badge-frame {
+    background: linear-gradient(135deg, #f89820 0%, #ff6b35 50%, #00d4ff 100%);
 }
 
-.award-star[data-award="ml"] .star-core {
-    background: radial-gradient(circle, rgba(138, 43, 226, 0.9) 0%, rgba(0, 212, 255, 0.8) 50%, rgba(255, 107, 53, 0.6) 100%);
+.award-badge[data-award="ml"] .badge-frame {
+    background: linear-gradient(135deg, #8a2be2 0%, #00d4ff 50%, #ff6b35 100%);
 }
 
-.award-star[data-award="certs"] .star-core {
-    background: radial-gradient(circle, rgba(0, 120, 212, 0.9) 0%, rgba(0, 212, 255, 0.8) 50%, rgba(255, 107, 53, 0.6) 100%);
+.award-badge[data-award="certs"] .badge-frame {
+    background: linear-gradient(135deg, #0078d4 0%, #00d4ff 50%, #ff6b35 100%);
 }
 
-.award-star[data-award="srimt"] .star-core {
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.9) 0%, rgba(255, 107, 53, 0.8) 50%, rgba(0, 212, 255, 0.6) 100%);
+.award-badge[data-award="srimt"] .badge-frame {
+    background: linear-gradient(135deg, #ffd700 0%, #ff6b35 50%, #00d4ff 100%);
 }
 
-.award-star[data-award="umaga"] .star-core {
-    background: radial-gradient(circle, rgba(255, 108, 55, 0.9) 0%, rgba(255, 107, 53, 0.8) 50%, rgba(0, 212, 255, 0.6) 100%);
+.award-badge[data-award="umaga"] .badge-frame {
+    background: linear-gradient(135deg, #ff6c37 0%, #ff6b35 50%, #00d4ff 100%);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .galaxy-container {
-        height: 70vh;
+    .badge-container {
+        height: 60vh;
         margin: 3rem 0 2rem;
     }
 
-    .awards-galaxy .container {
+    .awards-badges .container {
         padding-top: 1.5rem;
     }
 
-    .super-star { width: 80px; height: 80px; }
-    .major-star { width: 60px; height: 60px; }
-    .medium-star { width: 45px; height: 45px; }
-    .small-star { width: 30px; height: 30px; }
+    .main-badge { width: 70px; height: 70px; }
+    .secondary-badge { width: 55px; height: 55px; }
+    .small-badge { width: 40px; height: 40px; }
 
-    .super-star .star-core i { font-size: 2rem; }
-    .major-star .star-core i { font-size: 1.5rem; }
-    .medium-star .star-core i { font-size: 1.2rem; }
-    .small-star .star-core i { font-size: 0.8rem; }
+    .main-badge .badge-icon i { font-size: 1.4rem; }
+    .secondary-badge .badge-icon i { font-size: 1.1rem; }
+    .small-badge .badge-icon i { font-size: 0.8rem; }
 
     .panel-content {
         padding: 2rem;
@@ -467,24 +484,22 @@
 }
 
 @media (max-width: 480px) {
-    .galaxy-container {
-        height: 60vh;
+    .badge-container {
+        height: 50vh;
         margin: 2.5rem 0 2rem;
     }
 
-    .awards-galaxy .container {
+    .awards-badges .container {
         padding-top: 1rem;
     }
 
-    .super-star { width: 60px; height: 60px; }
-    .major-star { width: 50px; height: 50px; }
-    .medium-star { width: 35px; height: 35px; }
-    .small-star { width: 25px; height: 25px; }
+    .main-badge { width: 60px; height: 60px; }
+    .secondary-badge { width: 50px; height: 50px; }
+    .small-badge { width: 35px; height: 35px; }
 
-    .super-star .star-core i { font-size: 1.5rem; }
-    .major-star .star-core i { font-size: 1.2rem; }
-    .medium-star .star-core i { font-size: 1rem; }
-    .small-star .star-core i { font-size: 0.7rem; }
+    .main-badge .badge-icon i { font-size: 1.2rem; }
+    .secondary-badge .badge-icon i { font-size: 1rem; }
+    .small-badge .badge-icon i { font-size: 0.7rem; }
 
     .panel-content {
         padding: 1.5rem;
@@ -504,34 +519,8 @@
     }
 }
 
-/* Loading Animation */
-.award-star {
-    opacity: 0;
-    transform: scale(0);
-    animation: starAppear 1s ease forwards;
-}
-
-.award-star:nth-child(1) { animation-delay: 0.1s; }
-.award-star:nth-child(2) { animation-delay: 0.2s; }
-.award-star:nth-child(3) { animation-delay: 0.3s; }
-.award-star:nth-child(4) { animation-delay: 0.4s; }
-.award-star:nth-child(5) { animation-delay: 0.5s; }
-.award-star:nth-child(6) { animation-delay: 0.6s; }
-.award-star:nth-child(7) { animation-delay: 0.7s; }
-.award-star:nth-child(8) { animation-delay: 0.8s; }
-.award-star:nth-child(9) { animation-delay: 0.9s; }
-
-@keyframes starAppear {
-    0% {
-        opacity: 0;
-        transform: scale(0) rotate(180deg);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.2) rotate(90deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
+/* Immediate Badge Display */
+.award-badge {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
 }

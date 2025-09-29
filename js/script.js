@@ -81,39 +81,12 @@ function initMobileMenu() {
     }
 }
 
-// Scroll animations using Intersection Observer
+// Immediate display - no scroll animations needed
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-
-                // Add staggered animation for child elements
-                const children = entry.target.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.classList.add('visible');
-                    }, index * 100);
-                });
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements with animation classes
+    // Make all elements visible immediately
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .tech-category, .project-card, .timeline-item, .award-card');
-    animatedElements.forEach(el => observer.observe(el));
-
-    // Special handling for timeline items
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item, index) => {
-        setTimeout(() => {
-            observer.observe(item);
-        }, index * 200);
+    animatedElements.forEach(el => {
+        el.classList.add('visible');
     });
 }
 
@@ -133,37 +106,34 @@ function initSmoothScrolling() {
     });
 }
 
-// Typing effect for hero title
+// Immediate display - no typing effect
 function initTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-
-        // Start typing effect after a delay
-        setTimeout(typeWriter, 1000);
+        // Show title immediately
+        heroTitle.style.opacity = '1';
     }
 }
 
-// Parallax effect for background elements
+// Optimized parallax effect for better performance
 function initParallaxEffect() {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.hero::before, .technologies::before, .projects::before, .experience::before, .awards::before');
+    let ticking = false;
 
-        parallaxElements.forEach(element => {
-            const speed = 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
-        });
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.hero::before, .technologies::before, .projects::before, .experience::before, .awards::before');
+
+                parallaxElements.forEach(element => {
+                    const speed = 0.3; // Reduced speed for better performance
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
 
@@ -287,6 +257,16 @@ function initTimelineInteractions() {
 
 // Initialize all interactions
 document.addEventListener('DOMContentLoaded', function() {
+    // Start fade-in animations immediately
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+        el.classList.add('visible');
+    });
+
+    initScrollAnimations();
+    initTypingEffect();
+
     initProjectInteractions();
     initTechInteractions();
     initAwardInteractions();
@@ -294,16 +274,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initAdvancedScrollAnimations();
 });
 
-// Loading animation
+// Immediate loading - start fade-in animations right away
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 
-    // Trigger initial animations
-    const heroElements = document.querySelectorAll('.hero .fade-in');
-    heroElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.classList.add('visible');
-        }, index * 200);
+    // Ensure all fade-in elements start animating immediately
+    const allFadeElements = document.querySelectorAll('.fade-in');
+    allFadeElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+        el.classList.add('visible');
     });
 });
 
@@ -386,23 +365,23 @@ function initTabs() {
     }
 }
 
-// Galaxy functionality for awards page
+// Badge functionality for awards page
 function initGalaxy() {
-    const awardStars = document.querySelectorAll('.award-star');
+    const awardBadges = document.querySelectorAll('.award-badge');
     const awardDetailsPanel = document.getElementById('awardDetails');
     const closePanel = document.getElementById('closePanel');
 
-    if (awardStars.length === 0) {
-        return; // Exit if no galaxy found
+    if (awardBadges.length === 0) {
+        return; // Exit if no badges found
     }
 
     // Award data
     const awardData = {
         iitjava: {
             title: "Java Programming Competition (1st Prize)",
-            issuer: "IIT Bombay Go",
+            issuer: "IIT Bombay",
             date: "Feb 2024",
-            description: "Secured 1st prize in IIT Bombay Go Java Programming competition with an aggregate score of 77.52%.",
+            description: "Secured 1st prize in IIT Bombay Java Programming competition with an aggregate score of 77.52%.",
             credential: "Certificate ID: IITB-JAVA-2024",
             icon: "bx bxl-java"
         },
@@ -415,7 +394,7 @@ function initGalaxy() {
             icon: "bx bx-brain"
         },
         certs: {
-            title: "Microsoft & Google Certifications",
+            title: "Microsoft & Google – Student Ambassador Certifications",
             issuer: "Microsoft & Google",
             date: "2023-2024",
             description: "Earned multiple certifications from Microsoft and Google in cloud technologies, data analytics, and development tools.",
@@ -431,7 +410,7 @@ function initGalaxy() {
             icon: "bx bx-trophy"
         },
         umaga: {
-            title: "Umaga Tech Competition Winner",
+            title: "Umaga Technology Competition Winner",
             issuer: "Umaga Technologies",
             date: "2023",
             description: "Won the Umaga Tech competition showcasing innovative solutions and technical excellence in software development.",
@@ -440,10 +419,10 @@ function initGalaxy() {
         }
     };
 
-    // Add click event listeners to stars
-    awardStars.forEach(star => {
-        star.addEventListener('click', () => {
-            const awardType = star.getAttribute('data-award');
+    // Add click event listeners to badges
+    awardBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+            const awardType = badge.getAttribute('data-award');
             const award = awardData[awardType];
 
             if (award) {
@@ -452,26 +431,50 @@ function initGalaxy() {
         });
 
         // Add hover effects
-        star.addEventListener('mouseenter', () => {
-            star.style.transform = 'scale(1.3)';
-            star.style.zIndex = '30';
+        badge.addEventListener('mouseenter', () => {
+            badge.style.transform = 'scale(1.15)';
+            badge.style.zIndex = '30';
 
-            // Add glow effect
-            const starCore = star.querySelector('.star-core');
-            if (starCore) {
-                starCore.style.boxShadow = '0 0 50px rgba(0, 212, 255, 0.8), 0 0 100px rgba(255, 107, 53, 0.6)';
+            // Add glow effect to badge frame
+            const badgeFrame = badge.querySelector('.badge-frame');
+            if (badgeFrame) {
+                badgeFrame.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(255, 107, 53, 0.6)';
             }
+
+            // Enhance glow effect
+            const badgeGlow = badge.querySelector('.badge-glow');
+            if (badgeGlow) {
+                badgeGlow.style.animationDuration = '0.5s';
+            }
+
+            // Speed up particle animation
+            const particles = badge.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                particle.style.animationDuration = '1s';
+            });
         });
 
-        star.addEventListener('mouseleave', () => {
-            star.style.transform = 'scale(1)';
-            star.style.zIndex = '10';
+        badge.addEventListener('mouseleave', () => {
+            badge.style.transform = 'scale(1)';
+            badge.style.zIndex = '10';
 
             // Remove glow effect
-            const starCore = star.querySelector('.star-core');
-            if (starCore) {
-                starCore.style.boxShadow = '';
+            const badgeFrame = badge.querySelector('.badge-frame');
+            if (badgeFrame) {
+                badgeFrame.style.boxShadow = '';
             }
+
+            // Reset glow effect
+            const badgeGlow = badge.querySelector('.badge-glow');
+            if (badgeGlow) {
+                badgeGlow.style.animationDuration = '2s';
+            }
+
+            // Reset particle animation
+            const particles = badge.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                particle.style.animationDuration = '4s';
+            });
         });
     });
 
@@ -517,20 +520,20 @@ function initGalaxy() {
         }
     });
 
-    // Add constellation line animation
-    const constellationPath = document.querySelector('.constellation-path');
-    if (constellationPath) {
-        constellationPath.style.strokeDasharray = '2, 2';
-        constellationPath.style.animation = 'pathFlow 10s linear infinite';
+    // Optimized connection path animation
+    const connectionPath = document.querySelector('.connection-path');
+    if (connectionPath) {
+        connectionPath.style.strokeDasharray = '1, 1';
+        connectionPath.style.animation = 'connectionFlow 4s linear infinite';
     }
 
-    // Add random twinkling to background stars
-    const backgroundStars = document.querySelectorAll('.background-stars .star');
-    backgroundStars.forEach((star, index) => {
-        const randomDelay = Math.random() * 3;
-        const randomDuration = 2 + Math.random() * 2;
-        star.style.animationDelay = `${randomDelay}s`;
-        star.style.animationDuration = `${randomDuration}s`;
+    // Optimized background dots with reduced animation complexity
+    const backgroundDots = document.querySelectorAll('.badge-background .pattern-dot');
+    backgroundDots.forEach((dot, index) => {
+        const randomDelay = Math.random() * 2; // Reduced from 4s to 2s
+        const randomDuration = 2 + Math.random() * 1; // Reduced from 3-5s to 2-3s
+        dot.style.animationDelay = `${randomDelay}s`;
+        dot.style.animationDuration = `${randomDuration}s`;
     });
 }
 

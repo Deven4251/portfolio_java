@@ -15,7 +15,12 @@
         <div class="nav-logo">
           <a href="index.html">JAVA Developer</a>
         </div>
-        <ul class="nav-menu">
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item">
             <a href="index.html" class="nav-link">Home</a>
           </li>
@@ -40,64 +45,48 @@
       </div>
     </nav>
 
-    <!-- Awards Galaxy Section -->
-    <section class="awards-galaxy">
+    <!-- Awards Badge Section -->
+    <section class="awards-badges">
        <div class="container">
     <div class="section-header">
         <h1 class="section-title">Orbit of Success 🪐</h1>
-        <p class="section-subtitle">Explore my constellation of awards and certifications</p>
+        <p class="section-subtitle">Explore my collection of awards and certifications</p>
     </div>
 
-    <!-- Galaxy Background -->
-    <div class="galaxy-container">
-        <!-- Background Stars -->
-        <div class="background-stars">
-            <div class="star star-1"></div>
-            <div class="star star-2"></div>
-            <div class="star star-3"></div>
-            <div class="star star-4"></div>
-            <div class="star star-5"></div>
-            <div class="star star-6"></div>
-            <div class="star star-7"></div>
-            <div class="star star-8"></div>
-            <div class="star star-9"></div>
-            <div class="star star-10"></div>
+    <!-- Badge Display Area -->
+    <div class="badge-container">
+        <!-- Background Pattern -->
+        <div class="badge-background">
+            <div class="pattern-dot pattern-1"></div>
+            <div class="pattern-dot pattern-2"></div>
+            <div class="pattern-dot pattern-3"></div>
+            <div class="pattern-dot pattern-4"></div>
+            <div class="pattern-dot pattern-5"></div>
+            <div class="pattern-dot pattern-6"></div>
+            <div class="pattern-dot pattern-7"></div>
+            <div class="pattern-dot pattern-8"></div>
         </div>
 
-        <!-- Award Stars (Constellation) -->
-        <div class="constellation">
-            <!-- Central Hub - IIT Bombay Java (Most Prestigious) -->
-            <div class="award-star super-star" data-award="iitjava" style="top: 50%; left: 50%;">
-                <div class="star-core">
-                    <i class='bx bxl-java'></i>
+        <!-- Award Badges -->
+        <div class="badge-collection">
+            <!-- Main Badge - IIT Bombay Java (Most Prestigious) -->
+            <div class="award-badge main-badge" data-award="iitjava" style="top: 15%; left: 50%;">
+                <div class="badge-frame">
+                    <div class="badge-ribbon">
+                        <div class="ribbon-top"></div>
+                        <div class="ribbon-bottom"></div>
+                    </div>
+                    <div class="badge-center">
+                        <div class="badge-icon">
+                            <i class='bx bxl-java'></i>
+                        </div>
+                        <div class="badge-glow"></div>
+                    </div>
+                    <div class="badge-ring ring-1"></div>
+                    <div class="badge-ring ring-2"></div>
+                    <div class="badge-ring ring-3"></div>
                 </div>
-                <div class="star-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                    <div class="ring ring-4"></div>
-                </div>
-                <div class="star-particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                </div>
-            </div>
-
-            <!-- Major Stars - Academic Excellence -->
-            <div class="award-star major-star" data-award="srimt" style="top: 20%; left: 30%;">
-                <div class="star-core">
-                    <i class='bx bx-trophy'></i>
-                </div>
-                <div class="star-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                </div>
-                <div class="star-particles">
+                <div class="badge-particles">
                     <div class="particle"></div>
                     <div class="particle"></div>
                     <div class="particle"></div>
@@ -105,69 +94,104 @@
                 </div>
             </div>
 
-            <!-- Major Star - ML Bootcamp -->
-            <div class="award-star major-star" data-award="ml" style="top: 25%; left: 70%;">
-                <div class="star-core">
-                    <i class='bx bx-brain'></i>
+            <!-- Secondary Badges - Academic Excellence -->
+            <div class="award-badge secondary-badge" data-award="srimt" style="top: 35%; left: 20%;">
+                <div class="badge-frame">
+                    <div class="badge-ribbon">
+                        <div class="ribbon-top"></div>
+                        <div class="ribbon-bottom"></div>
+                    </div>
+                    <div class="badge-center">
+                        <div class="badge-icon">
+                            <i class='bx bx-trophy'></i>
+                        </div>
+                        <div class="badge-glow"></div>
+                    </div>
+                    <div class="badge-ring ring-1"></div>
+                    <div class="badge-ring ring-2"></div>
                 </div>
-                <div class="star-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                </div>
-                <div class="star-particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                </div>
-            </div>
-
-            <!-- Major Star - Professional Certifications -->
-            <div class="award-star major-star" data-award="certs" style="top: 70%; left: 25%;">
-                <div class="star-core">
-                    <i class='bx bx-certification'></i>
-                </div>
-                <div class="star-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                </div>
-                <div class="star-particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
+                <div class="badge-particles">
                     <div class="particle"></div>
                     <div class="particle"></div>
                 </div>
             </div>
 
-            <!-- Medium Star - Competition Winner -->
-            <div class="award-star medium-star" data-award="umaga" style="top: 75%; left: 70%;">
-                <div class="star-core">
-                    <i class='bx bx-medal'></i>
+            <!-- Secondary Badge - ML Bootcamp -->
+            <div class="award-badge secondary-badge" data-award="ml" style="top: 30%; left: 75%;">
+                <div class="badge-frame">
+                    <div class="badge-ribbon">
+                        <div class="ribbon-top"></div>
+                        <div class="ribbon-bottom"></div>
+                    </div>
+                    <div class="badge-center">
+                        <div class="badge-icon">
+                            <i class='bx bx-brain'></i>
+                        </div>
+                        <div class="badge-glow"></div>
+                    </div>
+                    <div class="badge-ring ring-1"></div>
+                    <div class="badge-ring ring-2"></div>
                 </div>
-                <div class="star-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                </div>
-                <div class="star-particles">
+                <div class="badge-particles">
                     <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+
+            <!-- Secondary Badge - Professional Certifications -->
+            <div class="award-badge secondary-badge" data-award="certs" style="top: 55%; left: 25%;">
+                <div class="badge-frame">
+                    <div class="badge-ribbon">
+                        <div class="ribbon-top"></div>
+                        <div class="ribbon-bottom"></div>
+                    </div>
+                    <div class="badge-center">
+                        <div class="badge-icon">
+                            <i class='bx bx-certification'></i>
+                        </div>
+                        <div class="badge-glow"></div>
+                    </div>
+                    <div class="badge-ring ring-1"></div>
+                    <div class="badge-ring ring-2"></div>
+                </div>
+                <div class="badge-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+
+            <!-- Small Badge - Competition Winner -->
+            <div class="award-badge small-badge" data-award="umaga" style="top: 60%; left: 70%;">
+                <div class="badge-frame">
+                    <div class="badge-ribbon">
+                        <div class="ribbon-top"></div>
+                        <div class="ribbon-bottom"></div>
+                    </div>
+                    <div class="badge-center">
+                        <div class="badge-icon">
+                            <i class='bx bx-medal'></i>
+                        </div>
+                        <div class="badge-glow"></div>
+                    </div>
+                    <div class="badge-ring ring-1"></div>
+                </div>
+                <div class="badge-particles">
                     <div class="particle"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Constellation Lines -->
-        <svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <!-- Connection Lines -->
+        <svg class="badge-connections" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
-                    <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:0.6" />
-                    <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.6" />
+                    <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:0.4" />
+                    <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.6" />
                 </linearGradient>
             </defs>
-            <path class="constellation-path" d="M50,50 L30,20 L70,25 L25,70 L70,75"
-                  stroke="url(#lineGradient)" stroke-width="0.1" fill="none" opacity="0.6"/>
+            <path class="connection-path" d="M50,15 L20,35 L75,30 L25,55 L70,60"
+                  stroke="url(#connectionGradient)" stroke-width="0.08" fill="none" opacity="0.5"/>
         </svg>
     </div>
 
@@ -182,10 +206,10 @@
                     <i class='bx bxl-java'></i>
                 </div>
                 <h3 class="award-title">Java Programming Competition (1st Prize)</h3>
-                <p class="award-issuer">IIT Bombay </p>
+                <p class="award-issuer">IIT Bombay</p>
                 <p class="award-date">Feb 2024</p>
                 <p class="award-description">
-                    Secured 1st prize in IIT Bombay Go Java Programming competition with an aggregate score of 77.52%.
+                    Secured 1st prize in IIT Bombay Java Programming competition with an aggregate score of 77.52%.
                 </p>
                 <div class="award-credential">
                     <span class="credential-id">Certificate ID: IITB-JAVA-2024</span>
