@@ -3,147 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Test - Java Developer Portfolio</title>
+    <title>Responsive Test - Devendra Mishra Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: white;
         }
         .test-container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .test-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            text-align: center;
         }
         .test-title {
-            color: #333;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
         }
-        .test-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+        .screen-size {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .screen-size h3 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
         }
         .test-link {
-            display: block;
-            padding: 15px;
+            display: inline-block;
             background: linear-gradient(135deg, #00d4ff, #ff6b35);
             color: white;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
+            border-radius: 25px;
+            margin: 1rem;
             transition: transform 0.3s ease;
         }
         .test-link:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
-        .responsive-info {
-            background: #e8f4fd;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: left;
         }
-        .breakpoint-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
+        .instructions h3 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
         }
-        .breakpoint {
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 0.9rem;
+        .instructions ul {
+            margin-left: 1rem;
+        }
+        .instructions li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
     <div class="test-container">
-        <h1>🚀 Java Developer Portfolio - Responsive Test</h1>
+        <h1 class="test-title">Responsive Design Test</h1>
 
-        <div class="responsive-info">
-            <h3>📱 Responsive Design Features Implemented:</h3>
+        <div class="instructions">
+            <h3>How to Test Responsiveness:</h3>
             <ul>
-                <li>✅ Mobile-first CSS approach with proper breakpoints</li>
-                <li>✅ Hamburger menu for mobile navigation</li>
-                <li>✅ Flexible grid layouts that adapt to screen size</li>
-                <li>✅ Responsive typography and spacing</li>
-                <li>✅ Touch-friendly button sizes</li>
-                <li>✅ Rocket theme for awards page (replaced galaxy)</li>
+                <li><strong>Desktop (1200px+):</strong> Full layout with side-by-side hero content</li>
+                <li><strong>Laptop (992px-1199px):</strong> Slightly smaller profile image, adjusted spacing</li>
+                <li><strong>Tablet (768px-991px):</strong> Stacked layout, image above text, centered content</li>
+                <li><strong>Mobile Landscape (576px-767px):</strong> Compact layout, smaller profile image, stacked buttons</li>
+                <li><strong>Mobile Portrait (up to 575px):</strong> Minimal spacing, small profile image, vertical button layout</li>
+                <li><strong>Extra Small (up to 400px):</strong> Ultra-compact design for very small screens</li>
             </ul>
         </div>
 
-        <div class="breakpoint-info">
-            <div class="breakpoint">
-                <strong>Large Screens</strong><br>
-                1200px+
-            </div>
-            <div class="breakpoint">
-                <strong>Medium Screens</strong><br>
-                992px - 1199px
-            </div>
-            <div class="breakpoint">
-                <strong>Tablets</strong><br>
-                768px - 991px
-            </div>
-            <div class="breakpoint">
-                <strong>Mobile Landscape</strong><br>
-                576px - 767px
-            </div>
-            <div class="breakpoint">
-                <strong>Mobile Portrait</strong><br>
-                up to 575px
-            </div>
-            <div class="breakpoint">
-                <strong>Extra Small</strong><br>
-                up to 400px
-            </div>
+        <div class="screen-size">
+            <h3>Test Different Screen Sizes</h3>
+            <p>Use your browser's developer tools to test different screen sizes:</p>
+            <p>Press F12 → Click device toolbar icon → Select different devices</p>
         </div>
 
-        <div class="test-section">
-            <h2 class="test-title">🎯 Test Pages</h2>
-            <div class="test-links">
-                <a href="index.html" class="test-link">🏠 Home Page</a>
-                <a href="technologies.html" class="test-link">⚙️ Technologies</a>
-                <a href="projects.html" class="test-link">💼 Projects</a>
-                <a href="experience.html" class="test-link">🎓 Experience</a>
-                <a href="awards.html" class="test-link">🚀 Awards (Rocket Theme)</a>
-            </div>
-        </div>
+        <a href="index.html" class="test-link">View Homepage</a>
 
-        <div class="test-section">
-            <h2 class="test-title">📱 Testing Instructions</h2>
-            <ol>
-                <li>Open each page in your browser</li>
-                <li>Use browser dev tools to test different screen sizes</li>
-                <li>Check that the hamburger menu works on mobile</li>
-                <li>Verify that content scales properly on all devices</li>
-                <li>Test the rocket-themed awards page interactions</li>
-                <li>Ensure text remains readable at all sizes</li>
-            </ol>
-        </div>
-
-        <div class="test-section">
-            <h2 class="test-title">🔧 Key Improvements Made</h2>
-            <ul>
-                <li><strong>Navigation:</strong> Added hamburger menu with smooth animations</li>
-                <li><strong>Breakpoints:</strong> Implemented comprehensive responsive breakpoints</li>
-                <li><strong>Awards Theme:</strong> Changed from galaxy/constellation to rocket/launch theme</li>
-                <li><strong>Mobile Layout:</strong> Optimized layouts for mobile-first approach</li>
-                <li><strong>Typography:</strong> Responsive font sizes that scale with screen size</li>
-                <li><strong>Touch Targets:</strong> Ensured buttons and links are touch-friendly</li>
+        <div class="screen-size">
+            <h3>Key Responsive Features Implemented:</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li>✅ Mobile-first navigation with hamburger menu</li>
+                <li>✅ Flexible hero section layout (grid → stacked)</li>
+                <li>✅ Responsive typography scaling</li>
+                <li>✅ Adaptive button layouts</li>
+                <li>✅ Scalable profile image</li>
+                <li>✅ Optimized spacing and padding</li>
+                <li>✅ Touch-friendly interactive elements</li>
+                <li>✅ Improved readability on small screens</li>
             </ul>
         </div>
     </div>
