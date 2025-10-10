@@ -536,3 +536,9 @@ section {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #ff6b35, #00d4ff);
 }
+.ampercent{
+    color: red;
+}
+.ampercent1{
+    color: pink;
+}
