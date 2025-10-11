@@ -266,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initScrollAnimations();
     initTypingEffect();
-
     initProjectInteractions();
     initTechInteractions();
     initAwardInteractions();
@@ -537,6 +536,45 @@ function initGalaxy() {
     });
 }
 
+// Global Loading Animation Control
+function initGlobalLoading() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const mainContent = document.querySelector('.main-content');
+
+    if (loadingOverlay) {
+        // Ensure nav and footer are immediately visible
+        const navbar = document.querySelector('.navbar');
+        const footer = document.querySelector('.footer');
+
+        if (navbar) {
+            navbar.style.opacity = '1';
+            navbar.style.visibility = 'visible';
+            navbar.style.display = 'block';
+        }
+
+        if (footer) {
+            footer.style.opacity = '1';
+            footer.style.visibility = 'visible';
+            footer.style.display = 'block';
+        }
+
+        // Hide loading overlay after exactly 2 seconds
+        setTimeout(() => {
+            loadingOverlay.classList.add('fade-out');
+
+            // Remove overlay after fade out completes
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 800);
+        }, 2000); // Exactly 2 second loading time
+    }
+}
+
+// Initialize global loading animation when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initGlobalLoading();
+});
+
 // Export functions for potential external use
 window.PortfolioJS = {
     initNavigation,
@@ -545,5 +583,6 @@ window.PortfolioJS = {
     initMobileMenu,
     initTabs,
     initGalaxy,
+    initGlobalLoading,
     debounce
 };

@@ -17,6 +17,129 @@ body {
     overflow-x: hidden;
 }
 
+/* Global Loading System */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500; /* Lower than navbar to ensure nav stays visible */
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+    pointer-events: auto;
+}
+
+.loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-content {
+    text-align: center;
+    color: #00d4ff;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(0, 212, 255, 0.2);
+    border-top: 4px solid #00d4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-in-out 0.5s forwards;
+}
+
+.loading-subtext {
+    font-size: 0.9rem;
+    color: #888;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-in-out 0.8s forwards;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page Content Animation */
+.main-content {
+    opacity: 0;
+    animation: fadeInPage 0.8s ease-in-out 2s forwards;
+}
+
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure header and footer are always visible and preloaded */
+.navbar, .footer {
+    opacity: 1 !important;
+    animation: none !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Preload navigation and footer */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    transition: none !important;
+}
+
+.footer {
+    position: relative;
+    z-index: 100;
+    background: #0a0a0a;
+    transition: none !important;
+    margin-top: auto;
+}
+
+/* Ensure footer is always at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
