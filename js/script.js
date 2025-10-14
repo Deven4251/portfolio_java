@@ -367,172 +367,20 @@ function initTabs() {
 // Badge functionality for awards page
 function initGalaxy() {
     const awardBadges = document.querySelectorAll('.award-badge');
-    const awardDetailsPanel = document.getElementById('awardDetails');
-    const closePanel = document.getElementById('closePanel');
-
     if (awardBadges.length === 0) {
-        return; // Exit if no badges found
+        return;
     }
 
-    // Award data
-    const awardData = {
-        iitjava: {
-            title: "Java Programming Competition (1st Prize)",
-            issuer: "IIT Bombay",
-            date: "Feb 2024",
-            description: "Secured 1st prize in IIT Bombay Java Programming competition with an aggregate score of 77.52%.",
-            credential: "Certificate ID: IITB-JAVA-2024",
-            icon: "bx bxl-java"
-        },
-        ml: {
-            title: "Machine Learning Bootcamp Certificate",
-            issuer: "Devtown",
-            date: "2024",
-            description: "Completed comprehensive Machine Learning bootcamp covering data science, AI algorithms, and practical applications.",
-            credential: "Certificate ID: DEVTOWN-ML-2024",
-            icon: "bx bx-brain"
-        },
-        certs: {
-            title: "Microsoft & Google – Student Ambassador Certifications",
-            issuer: "Microsoft & Google",
-            date: "2023-2024",
-            description: "Earned multiple certifications from Microsoft and Google in cloud technologies, data analytics, and development tools.",
-            credential: "Multiple Certifications",
-            icon: "bx bx-certification"
-        },
-        srimt: {
-            title: "Academic Excellence Award",
-            issuer: "SRIMT",
-            date: "2023",
-            description: "Recognized for outstanding academic performance and leadership in computer science and engineering.",
-            credential: "Award #SRIMT-2023-001",
-            icon: "bx bx-trophy"
-        },
-        umaga: {
-            title: "Umaga Technology Competition Winner",
-            issuer: "Umaga Technologies",
-            date: "2023",
-            description: "Won the Umaga Tech competition showcasing innovative solutions and technical excellence in software development.",
-            credential: "Competition Winner 2023",
-            icon: "bx bx-medal"
-        }
-    };
-
-    // Add click event listeners to badges
+    // Simple hover effects for cards
     awardBadges.forEach(badge => {
-        badge.addEventListener('click', () => {
-            const awardType = badge.getAttribute('data-award');
-            const award = awardData[awardType];
-
-            if (award) {
-                showAwardDetails(award);
-            }
-        });
-
-        // Add hover effects
         badge.addEventListener('mouseenter', () => {
-            badge.style.transform = 'scale(1.15)';
-            badge.style.zIndex = '30';
-
-            // Add glow effect to badge frame
-            const badgeFrame = badge.querySelector('.badge-frame');
-            if (badgeFrame) {
-                badgeFrame.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(255, 107, 53, 0.6)';
-            }
-
-            // Enhance glow effect
-            const badgeGlow = badge.querySelector('.badge-glow');
-            if (badgeGlow) {
-                badgeGlow.style.animationDuration = '0.5s';
-            }
-
-            // Speed up particle animation
-            const particles = badge.querySelectorAll('.particle');
-            particles.forEach(particle => {
-                particle.style.animationDuration = '1s';
-            });
+            badge.style.transform = 'translateY(-8px) scale(1.02)';
+            badge.style.zIndex = '20';
         });
-
         badge.addEventListener('mouseleave', () => {
-            badge.style.transform = 'scale(1)';
-            badge.style.zIndex = '10';
-
-            // Remove glow effect
-            const badgeFrame = badge.querySelector('.badge-frame');
-            if (badgeFrame) {
-                badgeFrame.style.boxShadow = '';
-            }
-
-            // Reset glow effect
-            const badgeGlow = badge.querySelector('.badge-glow');
-            if (badgeGlow) {
-                badgeGlow.style.animationDuration = '2s';
-            }
-
-            // Reset particle animation
-            const particles = badge.querySelectorAll('.particle');
-            particles.forEach(particle => {
-                particle.style.animationDuration = '4s';
-            });
+            badge.style.transform = '';
+            badge.style.zIndex = '';
         });
-    });
-
-    // Show award details
-    function showAwardDetails(award) {
-        const panel = awardDetailsPanel;
-        const content = panel.querySelector('.award-detail-content');
-
-        // Update content
-        content.querySelector('.award-icon-large i').className = award.icon;
-        content.querySelector('.award-title').textContent = award.title;
-        content.querySelector('.award-issuer').textContent = award.issuer;
-        content.querySelector('.award-date').textContent = award.date;
-        content.querySelector('.award-description').textContent = award.description;
-        content.querySelector('.credential-id').textContent = award.credential;
-
-        // Show panel
-        panel.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Close panel
-    if (closePanel) {
-        closePanel.addEventListener('click', () => {
-            awardDetailsPanel.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-
-    // Close panel when clicking outside
-    awardDetailsPanel.addEventListener('click', (e) => {
-        if (e.target === awardDetailsPanel) {
-            awardDetailsPanel.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Close panel with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && awardDetailsPanel.classList.contains('active')) {
-            awardDetailsPanel.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Optimized connection path animation
-    const connectionPath = document.querySelector('.connection-path');
-    if (connectionPath) {
-        connectionPath.style.strokeDasharray = '1, 1';
-        connectionPath.style.animation = 'connectionFlow 4s linear infinite';
-    }
-
-    // Optimized background dots with reduced animation complexity
-    const backgroundDots = document.querySelectorAll('.badge-background .pattern-dot');
-    backgroundDots.forEach((dot, index) => {
-        const randomDelay = Math.random() * 2; // Reduced from 4s to 2s
-        const randomDuration = 2 + Math.random() * 1; // Reduced from 3-5s to 2-3s
-        dot.style.animationDelay = `${randomDelay}s`;
-        dot.style.animationDuration = `${randomDuration}s`;
     });
 }
 
@@ -558,15 +406,15 @@ function initGlobalLoading() {
             footer.style.display = 'block';
         }
 
-        // Hide loading overlay after exactly 2 seconds
+        // Hide loading overlay after 300ms
         setTimeout(() => {
             loadingOverlay.classList.add('fade-out');
 
             // Remove overlay after fade out completes
             setTimeout(() => {
                 loadingOverlay.style.display = 'none';
-            }, 800);
-        }, 2000); // Exactly 2 second loading time
+            }, 300);
+        }, 300); // 300ms loading time
     }
 }
 

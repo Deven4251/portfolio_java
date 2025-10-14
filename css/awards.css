@@ -1,7 +1,7 @@
 /* Achievement Cards Page - Popup Cards Theme */
 
 .awards-badges {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -17,8 +17,8 @@
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -41,7 +41,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #10b981);
+    background: linear-gradient(135deg, #00d4ff, #ff6b35);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -50,7 +50,7 @@
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: #888;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.5;
@@ -66,9 +66,32 @@
 /* Cards Grid */
 .badge-collection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     padding: 2rem 0;
+}
+
+/* Responsive grid adjustments */
+@media (min-width: 1200px) {
+    .badge-collection {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .badge-collection {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .badge-collection {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
 }
 
 .award-badge {
@@ -76,11 +99,11 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
-    background: #ffffff;
+    background: #000000;
     border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    border: 1px solid rgba(60, 60, 60, 0.3);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInCard 0.8s ease-out forwards;
@@ -108,20 +131,63 @@
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     z-index: 20;
+    opacity: 1 !important;
 }
 
-/* Card Sizes */
+/* When any card is hovered, reduce opacity of all other cards */
+.badge-collection:hover .award-badge:not(:hover) {
+    opacity: 0.2 !important;
+    transition: opacity 0.3s ease;
+}
+
+/* Ensure hovered card stays fully visible */
+.badge-collection:hover .award-badge:hover {
+    opacity: 1 !important;
+}
+
+/* Card Sizes - Responsive */
 .main-badge {
-    min-height: 280px;
+    min-height: 260px;
     grid-column: span 2;
 }
 
 .secondary-badge {
-    min-height: 240px;
+    min-height: 220px;
 }
 
 .small-badge {
-    min-height: 200px;
+    min-height: 180px;
+}
+
+
+/* Responsive card heights */
+@media (max-width: 768px) {
+    .main-badge {
+        grid-column: span 1;
+        min-height: 240px;
+    }
+
+    .secondary-badge {
+        min-height: 200px;
+    }
+
+    .small-badge {
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-badge {
+        min-height: 200px;
+    }
+
+    .secondary-badge {
+        min-height: 180px;
+    }
+
+    .small-badge {
+        min-height: 140px;
+    }
 }
 
 /* Card Header */
@@ -129,7 +195,7 @@
     position: relative;
     width: 100%;
     height: 120px;
-    background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+    background: linear-gradient(135deg, #808080 0%, #2a2a2a 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,10 +253,54 @@
     justify-content: center;
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Colored outer circles for each award with enhanced visibility */
+.award-badge[data-award="iitjava"] .badge-center {
+    border: 4px solid #ffd700;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(50, 1, 255, 0.6),
+        inset 0 0 25px rgba(25, 215, 0, 0.2);
+}
+
+.award-badge[data-award="ml"] .badge-center {
+    border: 4px solid #8b5cf6;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(139, 92, 246, 0.6),
+        inset 0 0 25px rgba(139, 92, 246, 0.2);
+}
+
+.award-badge[data-award="certs"] .badge-center {
+    border: 4px solid #00d4ff;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(0, 212, 255, 0.6),
+        inset 0 0 25px rgba(0, 212, 255, 0.2);
+}
+
+.award-badge[data-award="srimt"] .badge-center {
+    border: 4px solid #10b981;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(16, 185, 129, 0.6),
+        inset 0 0 25px rgba(16, 185, 129, 0.2);
+}
+
+.award-badge[data-award="umaga"] .badge-center {
+    border: 4px solid #ef4444;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(239, 68, 68, 0.6),
+        inset 0 0 25px rgba(239, 68, 68, 0.2);
 }
 
 /* Card Icon */
@@ -202,12 +312,292 @@
 .badge-icon i {
     font-size: 2rem;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow:
+        0 0 10px rgba(0, 0, 0, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
 }
 
 .main-badge .badge-icon i { font-size: 2.5rem; }
 .secondary-badge .badge-icon i { font-size: 2rem; }
 .small-badge .badge-icon i { font-size: 1.5rem; }
+
+/* Dynamic random colored icons that cycle through all 256 shades every 3 seconds */
+.award-badge[data-award="iitjava"] .badge-icon i {
+    animation: randomColorCycle1 3s linear infinite;
+    text-shadow:
+        0 0 15px currentColor,
+        0 0 25px currentColor,
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.award-badge[data-award="ml"] .badge-icon i {
+    animation: randomColorCycle2 3s linear infinite;
+    text-shadow:
+        0 0 15px currentColor,
+        0 0 25px currentColor,
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.award-badge[data-award="certs"] .badge-icon i {
+    animation: randomColorCycle3 3s linear infinite;
+    text-shadow:
+        0 0 15px currentColor,
+        0 0 25px currentColor,
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.award-badge[data-award="srimt"] .badge-icon i {
+    animation: randomColorCycle4 3s linear infinite;
+    text-shadow:
+        0 0 15px currentColor,
+        0 0 25px currentColor,
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.award-badge[data-award="umaga"] .badge-icon i {
+    animation: randomColorCycle5 3s linear infinite;
+    text-shadow:
+        0 0 15px currentColor,
+        0 0 25px currentColor,
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+/* Keyframes for cycling through all 256 color shades */
+@keyframes randomColorCycle1 {0% { color: hsl(250, 100%, 50%); }
+3.9% { color: hsl(251, 100%, 50%); }
+7.8% { color: hsl(252, 100%, 50%); }
+
+/* Group 2 – Green tones */
+11.7% { color: hsl(120, 100%, 45%); }
+15.6% { color: hsl(122, 100%, 50%); }
+19.5% { color: hsl(125, 100%, 55%); }
+
+/* Group 3 – Cyan tones */
+23.4% { color: hsl(180, 100%, 50%); }
+27.3% { color: hsl(182, 100%, 55%); }
+31.2% { color: hsl(185, 100%, 60%); }
+
+/* Group 4 – Blue tones */
+35.1% { color: hsl(210, 100%, 50%); }
+39% { color: hsl(212, 100%, 55%); }
+42.9% { color: hsl(215, 100%, 60%); }
+
+/* Group 5 – Pink/Purple tones */
+46.8% { color: hsl(300, 100%, 50%); }
+50.7% { color: hsl(302, 100%, 55%); }
+54.6% { color: hsl(305, 100%, 60%); }
+
+/* Group 6 – Orange/Red tones */
+58.5% { color: hsl(15, 100%, 50%); }
+62.4% { color: hsl(18, 100%, 55%); }
+66.3% { color: hsl(21, 100%, 60%); }
+
+/* Group 7 – Yellow tones */
+70.2% { color: hsl(45, 100%, 50%); }
+74.1% { color: hsl(48, 100%, 55%); }
+78% { color: hsl(51, 100%, 60%); }
+
+/* Group 8 – Magenta tones */
+81.9% { color: hsl(330, 100%, 50%); }
+85.8% { color: hsl(333, 100%, 55%); }
+89.7% { color: hsl(336, 100%, 60%); }
+
+/* Group 9 – Back to cool blue */
+93.6% { color: hsl(200, 100%, 50%); }
+97.5% { color: hsl(205, 100%, 55%); }
+100% { color: hsl(210, 100%, 60%); }
+
+}
+
+@keyframes randomColorCycle2 {
+ 0% { color: hsl(27, 100%, 50%); }
+3.9% { color: hsl(28, 100%, 50%); }
+7.8% { color: hsl(29, 100%, 50%); }
+
+/* Group 2 – Yellow tones */
+11.7% { color: hsl(55, 100%, 50%); }
+15.6% { color: hsl(56, 100%, 50%); }
+19.5% { color: hsl(57, 100%, 50%); }
+
+/* Group 3 – Green tones */
+23.4% { color: hsl(120, 100%, 45%); }
+27.3% { color: hsl(122, 100%, 50%); }
+31.2% { color: hsl(124, 100%, 55%); }
+
+/* Group 4 – Cyan tones */
+35.1% { color: hsl(180, 100%, 45%); }
+39% { color: hsl(182, 100%, 50%); }
+42.9% { color: hsl(184, 100%, 55%); }
+
+/* Group 5 – Blue tones */
+46.8% { color: hsl(210, 100%, 50%); }
+50.7% { color: hsl(212, 100%, 55%); }
+54.6% { color: hsl(214, 100%, 60%); }
+
+/* Group 6 – Purple tones */
+58.5% { color: hsl(270, 100%, 50%); }
+62.4% { color: hsl(272, 100%, 55%); }
+66.3% { color: hsl(274, 100%, 60%); }
+
+/* Group 7 – Pink tones */
+70.2% { color: hsl(320, 100%, 50%); }
+74.1% { color: hsl(322, 100%, 55%); }
+78% { color: hsl(324, 100%, 60%); }
+
+/* Group 8 – Red tones */
+81.9% { color: hsl(0, 100%, 50%); }
+85.8% { color: hsl(2, 100%, 55%); }
+89.7% { color: hsl(4, 100%, 60%); }
+
+/* Group 9 – Back to orange for smooth loop */
+93.6% { color: hsl(27, 100%, 50%); }
+97.5% { color: hsl(28, 100%, 50%); }
+100% { color: hsl(29, 100%, 50%); }
+
+}
+
+@keyframes randomColorCycle3 {
+  /* Orange/Yellow tones */
+  0% { color: hsl(54, 100%, 50%); }
+  3.9% { color: hsl(55, 100%, 50%); }
+  7.8% { color: hsl(56, 100%, 50%); }
+
+  /* Light Green tones */
+  11.7% { color: hsl(100, 100%, 45%); }
+  15.6% { color: hsl(102, 100%, 50%); }
+  19.5% { color: hsl(104, 100%, 55%); }
+
+  /* Aqua/Cyan tones */
+  23.4% { color: hsl(170, 100%, 45%); }
+  27.3% { color: hsl(172, 100%, 50%); }
+  31.2% { color: hsl(174, 100%, 55%); }
+
+  /* Blue tones */
+  35.1% { color: hsl(210, 100%, 50%); }
+  39% { color: hsl(212, 100%, 55%); }
+  42.9% { color: hsl(214, 100%, 60%); }
+
+  /* Indigo tones */
+  46.8% { color: hsl(260, 100%, 50%); }
+  50.7% { color: hsl(262, 100%, 55%); }
+  54.6% { color: hsl(264, 100%, 60%); }
+
+  /* Pink tones */
+  58.5% { color: hsl(320, 100%, 50%); }
+  62.4% { color: hsl(322, 100%, 55%); }
+  66.3% { color: hsl(324, 100%, 60%); }
+
+  /* Red tones */
+  70.2% { color: hsl(0, 100%, 50%); }
+  74.1% { color: hsl(2, 100%, 55%); }
+  78% { color: hsl(4, 100%, 60%); }
+
+  /* Return to Yellow for smooth loop */
+  81.9% { color: hsl(54, 100%, 50%); }
+  85.8% { color: hsl(55, 100%, 50%); }
+  89.7% { color: hsl(56, 100%, 50%); }
+  93.6% { color: hsl(57, 100%, 50%); }
+  97.5% { color: hsl(58, 100%, 50%); }
+  100% { color: hsl(59, 100%, 50%); }
+}
+
+
+@keyframes randomColorCycle4 {
+  /* Green tones */
+  0% { color: hsl(81, 100%, 50%); }
+  3.9% { color: hsl(82, 100%, 50%); }
+  7.8% { color: hsl(83, 100%, 50%); }
+
+  /* Teal tones */
+  11.7% { color: hsl(160, 100%, 45%); }
+  15.6% { color: hsl(162, 100%, 50%); }
+  19.5% { color: hsl(164, 100%, 55%); }
+
+  /* Sky Blue tones */
+  23.4% { color: hsl(200, 100%, 50%); }
+  27.3% { color: hsl(202, 100%, 55%); }
+  31.2% { color: hsl(204, 100%, 60%); }
+
+  /* Violet tones */
+  35.1% { color: hsl(280, 100%, 50%); }
+  39% { color: hsl(282, 100%, 55%); }
+  42.9% { color: hsl(284, 100%, 60%); }
+
+  /* Magenta tones */
+  46.8% { color: hsl(320, 100%, 50%); }
+  50.7% { color: hsl(322, 100%, 55%); }
+  54.6% { color: hsl(324, 100%, 60%); }
+
+  /* Orange tones */
+  58.5% { color: hsl(25, 100%, 50%); }
+  62.4% { color: hsl(27, 100%, 55%); }
+  66.3% { color: hsl(29, 100%, 60%); }
+
+  /* Gold tones */
+  70.2% { color: hsl(45, 100%, 50%); }
+  74.1% { color: hsl(47, 100%, 55%); }
+  78% { color: hsl(49, 100%, 60%); }
+
+  /* Return to Green for loop */
+  81.9% { color: hsl(81, 100%, 50%); }
+  85.8% { color: hsl(82, 100%, 50%); }
+  89.7% { color: hsl(83, 100%, 50%); }
+  93.6% { color: hsl(84, 100%, 50%); }
+  97.5% { color: hsl(85, 100%, 50%); }
+  100% { color: hsl(86, 100%, 50%); }
+}
+
+
+@keyframes randomColorCycle5 {
+  /* Cyan tones */
+  0% { color: hsl(108, 100%, 50%); }
+  3.9% { color: hsl(109, 100%, 50%); }
+  7.8% { color: hsl(110, 100%, 50%); }
+
+  /* Blue tones */
+  11.7% { color: hsl(200, 100%, 50%); }
+  15.6% { color: hsl(202, 100%, 55%); }
+  19.5% { color: hsl(204, 100%, 60%); }
+
+  /* Purple tones */
+  23.4% { color: hsl(270, 100%, 50%); }
+  27.3% { color: hsl(272, 100%, 55%); }
+  31.2% { color: hsl(274, 100%, 60%); }
+
+  /* Pink tones */
+  35.1% { color: hsl(320, 100%, 50%); }
+  39% { color: hsl(322, 100%, 55%); }
+  42.9% { color: hsl(324, 100%, 60%); }
+
+  /* Red tones */
+  46.8% { color: hsl(0, 100%, 50%); }
+  50.7% { color: hsl(2, 100%, 55%); }
+  54.6% { color: hsl(4, 100%, 60%); }
+
+  /* Orange tones */
+  58.5% { color: hsl(30, 100%, 50%); }
+  62.4% { color: hsl(32, 100%, 55%); }
+  66.3% { color: hsl(34, 100%, 60%); }
+
+  /* Yellow tones */
+  70.2% { color: hsl(50, 100%, 50%); }
+  74.1% { color: hsl(52, 100%, 55%); }
+  78% { color: hsl(54, 100%, 60%); }
+
+  /* Return to Cyan for loop */
+  81.9% { color: hsl(108, 100%, 50%); }
+  85.8% { color: hsl(109, 100%, 50%); }
+  89.7% { color: hsl(110, 100%, 50%); }
+  93.6% { color: hsl(111, 100%, 50%); }
+  97.5% { color: hsl(112, 100%, 50%); }
+  100% { color: hsl(113, 100%, 50%); }
+}
 
 /* Card Content */
 .card-content {
@@ -221,27 +611,27 @@
 .card-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #ffffff;
     margin-bottom: 0.5rem;
     line-height: 1.3;
 }
 
 .card-issuer {
     font-size: 0.875rem;
-    color: #6b7280;
+    color: #e0e0e0;
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
 
 .card-date {
     font-size: 0.75rem;
-    color: #9ca3af;
+    color: #b0b0b0;
     margin-bottom: 1rem;
 }
 
 .card-description {
     font-size: 0.875rem;
-    color: #4b5563;
+    color: #d0d0d0;
     line-height: 1.5;
     margin-bottom: 1rem;
     flex-grow: 1;
@@ -252,21 +642,21 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card-credential {
     font-size: 0.75rem;
-    color: #6b7280;
+    color: #ffffff;
     font-family: 'Courier New', monospace;
-    background: #f3f4f6;
+    background: rgba(255, 255, 255, 0.1);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
 }
 
 .card-badge {
-    background: linear-gradient(135deg, #3b82f6, #10b981);
-    color: white;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    color: #000000;
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
@@ -284,7 +674,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 107, 53, 0.08));
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -296,160 +686,28 @@
 }
 
 /* Award Details Panel */
-.award-details-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.award-details-panel.active {
-    display: flex;
-    opacity: 1;
-}
-
-.panel-content {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 53, 0.1));
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    border-radius: 20px;
-    padding: 3rem;
-    max-width: 600px;
-    width: 90%;
-    position: relative;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.3);
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-}
-
-.award-details-panel.active .panel-content {
-    transform: scale(1);
-}
-
-.close-panel {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.close-panel:hover {
-    background: rgba(255, 107, 53, 0.3);
-    border-color: #ff6b35;
-    transform: scale(1.1);
-}
-
-.award-detail-content {
-    text-align: center;
-}
-
-.award-icon-large {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, #00d4ff, #ff6b35);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2rem;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    animation: iconPulse 3s ease-in-out infinite;
-}
-
-.award-icon-large i {
-    font-size: 3rem;
-    color: #ffffff;
-}
-
-@keyframes iconPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.award-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #00d4ff, #ff6b35);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.award-issuer {
-    font-size: 1.2rem;
-    color: #00d4ff;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.award-date {
-    font-size: 1rem;
-    color: #ff6b35;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
-
-.award-description {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-}
-
-.award-credential {
-    padding: 1rem 1.5rem;
-    background: rgba(0, 212, 255, 0.1);
-    border-radius: 15px;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-}
-
-.credential-id {
-    font-size: 0.9rem;
-    color: #00d4ff;
-    font-weight: 500;
-    font-family: 'Courier New', monospace;
-}
 
 /* Special Card Colors */
+/* Colorful theme variations matching the icons */
 .award-badge[data-award="iitjava"] .badge-frame {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
-
 .award-badge[data-award="ml"] .badge-frame {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
-
 .award-badge[data-award="certs"] .badge-frame {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
-
 .award-badge[data-award="srimt"] .badge-frame {
-    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
 }
-
 .award-badge[data-award="umaga"] .badge-frame {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #ef44, #dc26);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
 }
 
 /* Responsive Design */
