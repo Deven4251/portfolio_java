@@ -311,12 +311,6 @@ window.addEventListener('error', (e) => {
     console.error('JavaScript error:', e.error);
 });
 
-// Console welcome message
-console.log(`
-🚀 Java Developer Portfolio
-Built with HTML, CSS, and JavaScript
-Featuring smooth animations and responsive design
-`);
 
 // Tab functionality for experience page
 function initTabs() {
