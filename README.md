@@ -93,6 +93,7 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
    git clone https://github.com/Deven4251/portfolio_java.git
    cd portfolio
    ```
+2. Run the repo:
    ```
    run with live server
    ```
