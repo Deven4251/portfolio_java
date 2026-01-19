@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,11 +14,11 @@
   <body>
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Loading Experience</div>
-            <div class="loading-subtext">Preparing timeline...</div>
-        </div>
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Experience</div>
+        <div class="loading-subtext">Preparing timeline...</div>
+      </div>
     </div>
 
     <!-- Navigation -->
@@ -64,229 +64,254 @@
 
     <!-- Main Content -->
     <div class="main-content">
-    <!-- Experience Section -->
-    <section class="experience">
-      <div class="container">
-        <div class="section-header">
-          <h1 class="section-title">Work Experience</h1>
-          <p class="section-subtitle">My professional journey</p>
-        </div>
-
-        <div class="tabs-container">
-          <div class="tabs-nav">
-            <button class="tab-btn active" data-tab="writewell">
-              <i class="bx bx-code-block"></i>
-              <span>Full Stack Developer (writewell Academy)</span>
-            </button>
-            <button class="tab-btn" data-tab="fullstack">
-              <i class="bx bx-code-block"></i>
-              <span>Full Stack Developer (Training)</span>
-            </button>
-            <button class="tab-btn" data-tab="datavis">
-              <i class="bx bx-bar-chart-alt"></i>
-              <span>Data Visualization</span>
-            </button>
-            <button class="tab-btn" data-tab="projects">
-              <i class="bx bx-laptop"></i>
-              <span>Major Projects</span>
-            </button>
+      <!-- Experience Section -->
+      <section class="experience">
+        <div class="container">
+          <div class="section-header">
+            <h1 class="section-title">Work Experience</h1>
+            <p class="section-subtitle">My professional journey</p>
           </div>
 
-          <div class="tabs-content">
+          <div class="tabs-container">
+            <div class="tabs-nav">
+              <button class="tab-btn active" data-tab="writewell">
+                <i class="bx bx-code-block"></i>
+                <span>Full Stack Developer (Handwriting Champions)</span>
+              </button>
+              <button class="tab-btn" data-tab="fullstack">
+                <i class="bx bx-code-block"></i>
+                <span>Full Stack Developer (Training)</span>
+              </button>
+              <button class="tab-btn" data-tab="datavis">
+                <i class="bx bx-bar-chart-alt"></i>
+                <span>Data Visualization</span>
+              </button>
+              <button class="tab-btn" data-tab="projects">
+                <i class="bx bx-laptop"></i>
+                <span>Major Projects</span>
+              </button>
+            </div>
 
-            <div class="tab-panel active" id="writewell">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <h3 class="experience-title">
-                    Full Stack Developer – Writewell Academy (Project)
-                  </h3>
-                  <span class="experience-company">Writewell Academy</span>
-                  <span class="experience-date">2025</span>
+            <div class="tabs-content">
+              <div class="tab-panel active" id="writewell">
+                <div class="experience-card">
+                  <div>
+                    
+                  </div>
+                  <div class="experience-header">
+                    <h3 class="experience-title">
+                      Full Stack Developer – Handwriting Champions (Project)
+                    </h3>
+                    <span class="experience-company"
+                      >Handwriting Champions</span
+                    >
+                    <span>Developer</span>
+                    <span class="experience-date">2025</span>
+                  </div>
+
+                  <div class="experience-description">
+                    <p>
+                      Built a full-stack handwriting improvement platform
+                      featuring smooth animations, structured UI sections, and a
+                      functional inquiry management system using the MERN stack.
+                    </p>
+
+                    <ul class="experience-achievements">
+                      <li>
+                        Developed a responsive and animation-rich frontend using
+                        React, Vite, and Framer Motion
+                      </li>
+                      <li>
+                        Implemented a secure backend with Express.js, Node.js,
+                        and MongoDB for inquiry submissions
+                      </li>
+                      <li>
+                        Integrated Lottie animations and smooth transitions to
+                        enhance user engagement
+                      </li>
+                      <li>
+                        Designed REST APIs for inquiry storage and optional
+                        email notifications
+                      </li>
+                      <li>
+                        Deployed both frontend and backend on cloud platforms
+                        ensuring performance and reliability
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="experience-tech">
+                    <span class="tech-tag">React (Vite)</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Framer Motion</span>
+                    <span class="tech-tag">Lottie</span>
+                  </div>
                 </div>
+              </div>
 
-                <div class="experience-description">
-                  <p>
-                    Built a full-stack handwriting improvement platform featuring smooth animations,
-                    structured UI sections, and a functional inquiry management system using the MERN stack.
-                  </p>
-
-                  <ul class="experience-achievements">
-                    <li>Developed a responsive and animation-rich frontend using React, Vite, and Framer Motion</li>
-                    <li>Implemented a secure backend with Express.js, Node.js, and MongoDB for inquiry submissions</li>
-                    <li>Integrated Lottie animations and smooth transitions to enhance user engagement</li>
-                    <li>Designed REST APIs for inquiry storage and optional email notifications</li>
-                    <li>Deployed both frontend and backend on cloud platforms ensuring performance and reliability</li>
-                  </ul>
+              <!-- Tab 1: Full Stack Developer Training -->
+              <div class="tab-panel" id="fullstack">
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <h3 class="experience-title">
+                      Full Stack Web Developer (Training)
+                    </h3>
+                    <span class="experience-company"
+                      >SR Institute of Management, Lucknow</span
+                    >
+                    <span class="experience-date">Jul 2023 - Sep 2023</span>
+                  </div>
+                  <div class="experience-description">
+                    <p>
+                      Developed an e-commerce website using the MERN stack with
+                      modern features including authentication, responsive UI,
+                      and API integrations.
+                    </p>
+                    <ul class="experience-achievements">
+                      <li>
+                        Designed and developed an e-commerce website using
+                        MongoDB, Express.js, React, and Node.js
+                      </li>
+                      <li>Implemented secure user authentication with JWT</li>
+                      <li>
+                        Integrated third-party APIs for extended functionality
+                      </li>
+                      <li>
+                        Tested and deployed the application on a cloud platform
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="experience-tech">
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">JWT</span>
+                  </div>
                 </div>
+              </div>
+              <!-- Tab 2: Data Visualization -->
+              <div class="tab-panel" id="datavis">
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <h3 class="experience-title">
+                      Data Visualization: Empowering Business with Insights
+                    </h3>
+                    <span class="experience-company">Tata Forage</span>
+                    <span class="experience-date">Feb 2023</span>
+                  </div>
+                  <div class="experience-description">
+                    <p>
+                      Completed a data visualization program covering business
+                      problem framing, visual selection, and communication of
+                      insights.
+                    </p>
+                    <ul class="experience-achievements">
+                      <li>
+                        Framed business scenarios and translated them into
+                        visual problems
+                      </li>
+                      <li>
+                        Chose appropriate visualization techniques for datasets
+                      </li>
+                      <li>
+                        Designed effective visuals to communicate data insights
+                      </li>
+                      <li>Created reports to support decision-making</li>
+                    </ul>
+                  </div>
+                  <div class="experience-tech">
+                    <span class="tech-tag">Data Analysis</span>
+                    <span class="tech-tag">Visualization</span>
+                    <span class="tech-tag">Business Insights</span>
+                  </div>
+                </div>
+              </div>
 
-                <div class="experience-tech">
-                  <span class="tech-tag">React (Vite)</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express.js</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">Framer Motion</span>
-                  <span class="tech-tag">Lottie</span>
+              <!-- Tab 3: Major Projects -->
+              <div class="tab-panel" id="projects">
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <h3 class="experience-title">Major Projects</h3>
+                    <span class="experience-company"
+                      >Academic & Personal Projects</span
+                    >
+                    <span class="experience-date">2023 - 2025</span>
+                  </div>
+                  <div class="experience-description">
+                    <ul class="experience-achievements">
+                      <li>
+                        <strong
+                          >WRITEWELL ACADEMY (Handwriting Improvement
+                          Platform):</strong
+                        >
+                        Built a full-stack learning platform using React,
+                        Node.js, and MongoDB; implemented animations, inquiry
+                        management, and a modern, engaging UI.
+                      </li>
+                      <li>
+                        <strong>SHOP-CIP:</strong> Built a MERN e-commerce
+                        platform with secure authentication, product catalog,
+                        and scalable architecture.
+                      </li>
+                      <li>
+                        <strong>RYDE (Car Renting Website):</strong> Developed
+                        booking system with React, Node.js, and MongoDB;
+                        integrated geolocation and real-time notifications.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="experience-tech">
+                    <span class="tech-tag">MERN Stack</span>
+                    <span class="tech-tag">Authentication</span>
+                    <span class="tech-tag">Cloud Deployment</span>
+                    <span class="tech-tag">Geolocation</span>
+                    <span class="tech-tag">Notifications</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-
-            <!-- Tab 1: Full Stack Developer Training -->
-            <div class="tab-panel active" id="fullstack">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <h3 class="experience-title">
-                    Full Stack Web Developer (Training)
-                  </h3>
-                  <span class="experience-company"
-                    >SR Institute of Management, Lucknow</span
-                  >
-                  <span class="experience-date">Jul 2023 - Sep 2023</span>
-                </div>
-                <div class="experience-description">
-                  <p>
-                    Developed an e-commerce website using the MERN stack with
-                    modern features including authentication, responsive UI, and
-                    API integrations.
-                  </p>
-                  <ul class="experience-achievements">
-                    <li>
-                      Designed and developed an e-commerce website using
-                      MongoDB, Express.js, React, and Node.js
-                    </li>
-                    <li>Implemented secure user authentication with JWT</li>
-                    <li>
-                      Integrated third-party APIs for extended functionality
-                    </li>
-                    <li>
-                      Tested and deployed the application on a cloud platform
-                    </li>
-                  </ul>
-                </div>
-                <div class="experience-tech">
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">Express.js</span>
-                  <span class="tech-tag">React.js</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">JWT</span>
-                </div>
-              </div>
-            </div>
-            <!-- Tab 2: Data Visualization -->
-            <div class="tab-panel" id="datavis">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <h3 class="experience-title">
-                    Data Visualization: Empowering Business with Insights
-                  </h3>
-                  <span class="experience-company">Tata Forage</span>
-                  <span class="experience-date">Feb 2023</span>
-                </div>
-                <div class="experience-description">
-                  <p>
-                    Completed a data visualization program covering business
-                    problem framing, visual selection, and communication of
-                    insights.
-                  </p>
-                  <ul class="experience-achievements">
-                    <li>
-                      Framed business scenarios and translated them into visual
-                      problems
-                    </li>
-                    <li>
-                      Chose appropriate visualization techniques for datasets
-                    </li>
-                    <li>
-                      Designed effective visuals to communicate data insights
-                    </li>
-                    <li>Created reports to support decision-making</li>
-                  </ul>
-                </div>
-                <div class="experience-tech">
-                  <span class="tech-tag">Data Analysis</span>
-                  <span class="tech-tag">Visualization</span>
-                  <span class="tech-tag">Business Insights</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab 3: Major Projects -->
-            <div class="tab-panel" id="projects">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <h3 class="experience-title">Major Projects</h3>
-                  <span class="experience-company"
-                    >Academic & Personal Projects</span
-                  >
-                  <span class="experience-date">2023 - 2025</span>
-                </div>
-                <div class="experience-description">
-                  <ul class="experience-achievements">
-                    <li>
-                      <strong>WRITEWELL ACADEMY (Handwriting Improvement Platform):</strong>
-                      Built a full-stack learning platform using React, Node.js, and MongoDB; implemented animations, inquiry management, and a modern, engaging UI.
-                    </li>
-                    <li>
-                      <strong>SHOP-CIP:</strong> Built a MERN e-commerce
-                      platform with secure authentication, product catalog, and
-                      scalable architecture.
-                    </li>
-                    <li>
-                      <strong>RYDE (Car Renting Website):</strong> Developed
-                      booking system with React, Node.js, and MongoDB;
-                      integrated geolocation and real-time notifications.
-                    </li>
-
-                  </ul>
-                </div>
-                <div class="experience-tech">
-                  <span class="tech-tag">MERN Stack</span>
-                  <span class="tech-tag">Authentication</span>
-                  <span class="tech-tag">Cloud Deployment</span>
-                  <span class="tech-tag">Geolocation</span>
-                  <span class="tech-tag">Notifications</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-text">
-            <p>&copy; 2024 java Developer. All rights reserved.</p>
-          </div>
-          <div class="footer-social">
-            <a
-              href="https://github.com/deven4251"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/devendra-mishra-691853234/"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a
-              href="mailto:devendramishra778585@gmail.com"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bx-envelope"></i>
-            </a>
           </div>
         </div>
-      </div>
-    </footer>
-    </div> <!-- End main-content -->
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-text">
+              <p>&copy; 2024 java Developer. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+              <a
+                href="https://github.com/deven4251"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bxl-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/devendra-mishra-691853234/"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a
+                href="mailto:devendramishra778585@gmail.com"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bx-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- End main-content -->
     <script src="js/script.js"></script>
   </body>
 </html>
