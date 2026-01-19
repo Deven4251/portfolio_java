@@ -87,9 +87,12 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
 - **Deployment**: Netlify / Vercel
 ---
 
-## ⚡ Setup & Installation
+## ⚡ Setup & LIVE VIEW
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/Deven4251/portfolio_java.git
    cd portfolio
-
+   ```
+   ```
+   run with live server
+   ```
