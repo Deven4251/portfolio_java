@@ -97,3 +97,7 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
    ```
    run with live server
    ```
+<p align="right">
+  <em> Devendra Mishra</em><br/>
+    <img src="https://img.shields.io/badge/19/01/2026-red?style=flat-square" />
+</p>
