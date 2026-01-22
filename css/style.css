@@ -17,6 +17,20 @@ body {
     overflow-x: hidden;
 }
 
+/* Prevent long words/URLs from forcing horizontal scroll */
+p, h1, h2, h3, h4, h5, h6, li, a, span {
+    overflow-wrap: anywhere;
+}
+
+/* Make media responsive by default */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Global Loading System */
 .loading-overlay {
     position: fixed;
@@ -265,30 +279,26 @@ body {
 /* Section Styles */
 section {
     padding: 100px 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    /* Most sections should scroll naturally; avoid forcing full-viewport height */
+    min-height: auto;
 }
 
 /* Responsive section padding */
 @media (max-width: 991px) {
     section {
         padding: 80px 0;
-        min-height: 80vh;
     }
 }
 
 @media (max-width: 767px) {
     section {
         padding: 60px 0;
-        min-height: 70vh;
     }
 }
 
 @media (max-width: 575px) {
     section {
         padding: 40px 0;
-        min-height: 60vh;
     }
 }
 
@@ -436,7 +446,8 @@ section {
 
 .footer-social {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
+    align-items: center;
 }
 
 .footer-social-link {

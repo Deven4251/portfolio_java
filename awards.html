@@ -1,25 +1,27 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awards - Java Developer</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/awards.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/awards.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Loading Achievements</div>
-            <div class="loading-subtext">Preparing your award gallery...</div>
-        </div>
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Achievements</div>
+        <div class="loading-subtext">Preparing your award gallery...</div>
+      </div>
     </div>
 
     <!-- Navigation -->
- <nav class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
           <a href="index.html">JAVA Developer</a>
@@ -46,7 +48,12 @@
             <a href="awards.html" class="nav-link active">Awards</a>
           </li>
           <li class="nav-item">
-            <a href="https://drive.google.com/file/d/1hzdR2d8MU3MfT4M-J53hO3Ddxt8FoBqw/view?usp=drive_link" target="_blank" class="nav-link download-btn" download>
+            <a
+              href="https://drive.google.com/file/d/1hzdR2d8MU3MfT4M-J53hO3Ddxt8FoBqw/view?usp=drive_link"
+              target="_blank"
+              class="nav-link download-btn"
+              download
+            >
               <i class="bx bx-download"></i> Download CV
             </a>
           </li>
@@ -56,204 +63,215 @@
 
     <!-- Main Content -->
     <div class="main-content">
-    <!-- Awards Badge Section -->
-    <section class="awards-badges">
-       <div class="container">
-    <div class="section-header">
-        <h1 class="section-title">Achievement Gallery 🏆</h1>
-        <p class="section-subtitle">Explore my collection of awards and certifications</p>
-    </div>
-
-    <!-- Cards Display Area -->
-    <div class="badge-container">
-        <!-- Award Cards -->
-        <div class="badge-collection">
-            <!-- Main Card - IIT Bombay Java (Most Prestigious) -->
-            <div class="award-badge main-badge" data-award="iitjava">
-                <div class="badge-frame">
-                    <div class="badge-ribbon">
-                        <div class="ribbon-top"></div>
-                        <div class="ribbon-bottom"></div>
-                    </div>
-                    <div class="badge-center">
-                        <div class="badge-icon">
-                            <i class='bx bxl-java'></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Java Programming Competition (1st Prize)</h3>
-                        <p class="card-issuer">IIT Bombay</p>
-                        <p class="card-date">Feb 2024</p>
-                        <p class="card-description">
-                            Secured 1st prize in IIT Bombay Java Programming competition with an aggregate score of 77.52%.
-                        </p>
-                        <div class="card-footer">
-                            <span class="card-credential">IITB-JAVA-2024</span>
-                            <span class="card-badge">Winner</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secondary Card - Academic Excellence -->
-            <div class="award-badge secondary-badge" data-award="srimt">
-                <div class="badge-frame">
-                    <div class="badge-ribbon">
-                        <div class="ribbon-top"></div>
-                        <div class="ribbon-bottom"></div>
-                    </div>
-                    <div class="badge-center">
-                        <div class="badge-icon">
-                            <i class='bx bx-trophy'></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Academic Excellence Award</h3>
-                        <p class="card-issuer">SRIMT</p>
-                        <p class="card-date">2023</p>
-                        <p class="card-description">
-                            Recognized for outstanding academic performance and consistent excellence in studies.
-                        </p>
-                        <div class="card-footer">
-                            <span class="card-credential">SRIMT-AE-2023</span>
-                            <span class="card-badge">Excellence</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secondary Card - ML Bootcamp -->
-            <div class="award-badge secondary-badge" data-award="ml">
-                <div class="badge-frame">
-                    <div class="badge-ribbon">
-                        <div class="ribbon-top"></div>
-                        <div class="ribbon-bottom"></div>
-                    </div>
-                    <div class="badge-center">
-                        <div class="badge-icon">
-                            <i class='bx bx-brain'></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Machine Learning Bootcamp</h3>
-                        <p class="card-issuer">Devtown Institute</p>
-                        <p class="card-date">2023</p>
-                        <p class="card-description">
-                            Completed intensive ML bootcamp covering advanced algorithms and practical applications.
-                        </p>
-                        <div class="card-footer">
-                            <span class="card-credential">ML-BOOTCAMP-2023</span>
-                            <span class="card-badge">Certified</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secondary Card - Professional Certifications -->
-            <div class="award-badge secondary-badge" data-award="certs">
-                <div class="badge-frame">
-                    <div class="badge-ribbon">
-                        <div class="ribbon-top"></div>
-                        <div class="ribbon-bottom"></div>
-                    </div>
-                    <div class="badge-center">
-                        <div class="badge-icon">
-                            <i class='bx bx-certification'></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Student Ambassador Certifications from Microsoft and Google</h3>
-                        <p class="card-issuer">Various Organizations</p>
-                        <p class="card-date">2022-2024</p>
-                        <p class="card-description">
-                            Multiple professional certifications in software development and cloud technologies.
-                        </p>
-                        <div class="card-footer">
-                            <span class="card-credential">PROF-CERTS</span>
-                            <span class="card-badge">Professional</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Small Card - Competition Winner -->
-            <div class="award-badge small-badge" data-award="umaga">
-                <div class="badge-frame">
-                    <div class="badge-ribbon">
-                        <div class="ribbon-top"></div>
-                        <div class="ribbon-bottom"></div>
-                    </div>
-                    <div class="badge-center">
-                        <div class="badge-icon">
-                            <i class='bx bx-medal'></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Competition Winner</h3>
-                        <p class="card-issuer">UMAGA Tech</p>
-                        <p class="card-date">2023</p>
-                        <p class="card-description">
-                            Winner of technical competition showcasing innovative problem-solving skills.
-                        </p>
-                        <div class="card-footer">
-                            <span class="card-credential">UMAGA-2023</span>
-                            <span class="card-badge">Winner</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-    </section>
-
-    <!-- Footer -->
-  <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-text">
-            <p>&copy; 2024 java Developer. All rights reserved.</p>
+      <!-- Awards Badge Section -->
+      <section class="awards-badges">
+        <div class="container">
+          <div class="section-header">
+            <h1 class="section-title">Achievement Gallery 🏆</h1>
+            <p class="section-subtitle">
+               Explore my collection of awards and certifications
+            </p>
           </div>
-          <div class="footer-social">
-            <a
-              href="https://github.com/deven4251"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/devendra-mishra-691853234/"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a
-              href="mailto:devendramishra778585@gmail.com"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bx-envelope"></i>
-            </a>
+
+          <!-- Cards Display Area -->
+          <div class="badge-container">
+            <!-- Award Cards -->
+            <div class="badge-collection">
+              <!-- Main Card - IIT Bombay Java (Most Prestigious) -->
+              <div class="award-badge main-badge" data-award="iitjava">
+                <div class="badge-frame">
+                  <div class="badge-ribbon">
+                    <div class="ribbon-top"></div>
+                    <div class="ribbon-bottom"></div>
+                  </div>
+                  <div class="badge-center">
+                    <div class="badge-icon">
+                      <i class="bx bxl-java"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div>
+                    <h3 class="card-title">
+                      Java Programming Competition (1st Prize)
+                    </h3>
+                    <p class="card-issuer">IIT Bombay</p>
+                    <p class="card-date">Feb 2024</p>
+                    <p class="card-description">
+                      Secured 1st prize in IIT Bombay Java Programming
+                      competition with an aggregate score of 77.52%.
+                    </p>
+                    <div class="card-footer">
+                      <span class="card-credential">CERTIFICATE ID</span>
+                      <span class="card-badge"><a class="nav-link" href="" target="_blank">VIEW CERT</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Card - Academic Excellence -->
+              <div class="award-badge secondary-badge" data-award="srimt">
+                <div class="badge-frame">
+                  <div class="badge-ribbon">
+                    <div class="ribbon-top"></div>
+                    <div class="ribbon-bottom"></div>
+                  </div>
+                  <div class="badge-center">
+                    <div class="badge-icon">
+                      <i class="bx bx-trophy"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div>
+                    <h3 class="card-title">Academic Excellence Award</h3>
+                    <p class="card-issuer">SRIMT</p>
+                    <p class="card-date">2023</p>
+                    <p class="card-description">
+                      Recognized for outstanding academic performance and
+                      consistent excellence in studies.
+                    </p>
+                    <div class="card-footer">
+                      <span class="card-credential">SRIMT-AE-2023</span>
+                      <span class="card-badge"><a href="">Excellence</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Card - ML Bootcamp -->
+              <div class="award-badge secondary-badge" data-award="ml">
+                <div class="badge-frame">
+                  <div class="badge-ribbon">
+                    <div class="ribbon-top"></div>
+                    <div class="ribbon-bottom"></div>
+                  </div>
+                  <div class="badge-center">
+                    <div class="badge-icon">
+                      <i class="bx bx-brain"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div>
+                    <h3 class="card-title">Machine Learning Bootcamp</h3>
+                    <p class="card-issuer">Devtown Institute</p>
+                    <p class="card-date">2023</p>
+                    <p class="card-description">
+                      Completed intensive ML bootcamp covering advanced
+                      algorithms and practical applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="card-credential">ML-BOOTCAMP-2023</span>
+                      <span class="card-badge"><a href="">Certified</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Card - Professional Certifications -->
+              <div class="award-badge secondary-badge" data-award="certs">
+                <div class="badge-frame">
+                  <div class="badge-ribbon">
+                    <div class="ribbon-top"></div>
+                    <div class="ribbon-bottom"></div>
+                  </div>
+                  <div class="badge-center">
+                    <div class="badge-icon">
+                      <i class="bx bx-certification"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div>
+                    <h3 class="card-title">
+                      Student Ambassador Certifications from Microsoft and
+                      Google
+                    </h3>
+                    <p class="card-issuer">Various Organizations</p>
+                    <p class="card-date">2022-2024</p>
+                    <p class="card-description">
+                      Multiple professional certifications in software
+                      development and cloud technologies.
+                    </p>
+                    <div class="card-footer">
+                      <span class="card-credential">PROF-CERTS</span>
+                      <span class="card-badge"><a href="">Professional</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Small Card - Competition Winner -->
+              <div class="award-badge small-badge" data-award="umaga">
+                <div class="badge-frame">
+                  <div class="badge-ribbon">
+                    <div class="ribbon-top"></div>
+                    <div class="ribbon-bottom"></div>
+                  </div>
+                  <div class="badge-center">
+                    <div class="badge-icon">
+                      <i class="bx bx-medal"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div>
+                    <h3 class="card-title">Competition Winner</h3>
+                    <p class="card-issuer">UMAGA Tech</p>
+                    <p class="card-date">2023</p>
+                    <p class="card-description">
+                      Winner of technical competition showcasing innovative
+                      problem-solving skills.
+                    </p>
+                    <div class="card-footer">
+                      <span class="card-credential">UMAGA-2023</span>
+                      <span class="card-badge"><a href="">Winner</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-    </div> <!-- End main-content -->
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-text">
+              <p>&copy; 2024 java Developer. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+              <a
+                href="https://github.com/deven4251"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bxl-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/devendra-mishra-691853234/"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a
+                href="mailto:devendramishra778585@gmail.com"
+                target="_blank"
+                class="footer-social-link"
+              >
+                <i class="bx bx-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- End main-content -->
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

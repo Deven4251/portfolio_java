@@ -647,11 +647,11 @@
 
 .card-credential {
     font-size: 0.75rem;
-    color: #ffffff;
+    color: #fa5b11ea;
     font-family: 'Courier New', monospace;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    background: rgba(252, 255, 252, 0.579);
+    padding: 1vh 1rem;
+    border-radius: 10px;
 }
 
 .card-badge {
@@ -659,7 +659,7 @@
     color: #000000;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.25rem 0.75rem;
+    padding: 1vh 1rem;
     border-radius: 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
