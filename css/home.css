@@ -1,37 +1,39 @@
 /* Home Page Specific Styles */
 
-/* Force layout changes with high specificity */
-body .hero .hero-container .hero-content {
-    display: grid !important;
-    grid-template-columns: 1.2fr 0.8fr !important;
-    gap: 2rem !important;
-    align-items: center !important;
-    min-height: 80vh !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 4rem !important;
-}
+/* Desktop-only forced layout (scoped so mobile media queries can override) */
+@media (min-width: 992px) {
+    body .hero .hero-container .hero-content {
+        display: grid !important;
+        grid-template-columns: 1.2fr 0.8fr !important;
+        gap: 2rem !important;
+        align-items: center !important;
+        min-height: 80vh !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 4rem !important;
+    }
 
-body .hero .hero-container .hero-content .hero-text {
-    text-align: left !important;
-    padding-right: 1rem !important;
-    order: 1 !important;
-}
+    body .hero .hero-container .hero-content .hero-text {
+        text-align: left !important;
+        padding-right: 1rem !important;
+        order: 1 !important;
+    }
 
-body .hero .hero-container .hero-content .hero-image {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding-left: 1rem !important;
-    order: 2 !important;
-}
+    body .hero .hero-container .hero-content .hero-image {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-left: 1rem !important;
+        order: 2 !important;
+    }
 
-body .hero .hero-container .hero-content .hero-text .hero-buttons {
-    justify-content: flex-left !important;
-}
+    body .hero .hero-container .hero-content .hero-text .hero-buttons {
+        justify-content: flex-start !important;
+    }
 
-body .hero .hero-container .hero-content .hero-text .social-links {
-    justify-content: flex-left !important;
+    body .hero .hero-container .hero-content .hero-text .social-links {
+        justify-content: flex-start !important;
+    }
 }
 
 /* Hero Section - Optimized */
@@ -136,8 +138,10 @@ body .hero .hero-container .hero-content .hero-text .social-links {
 
 .profile-image-container {
     position: relative;
-    width: 450px;
-    height: 500px;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 9 / 10;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid transparent;
@@ -272,8 +276,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 450px;
-        height: 500px;
+        max-width: 450px;
     }
 
     .hero-title {
@@ -298,8 +301,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 500px;
-        height: 550px;
+        max-width: 500px;
     }
 
     .hero-title {
@@ -327,8 +329,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 400px;
-        height: 450px;
+        max-width: 400px;
     }
 }
 
@@ -380,8 +381,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
     }
 
     .about-content {
@@ -449,8 +449,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 250px;
-        height: 250px;
+        max-width: 250px;
     }
 
     .about-content {
@@ -534,8 +533,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 200px;
-        height: 200px;
+        max-width: 200px;
     }
 
     .about-content {
@@ -599,8 +597,7 @@ body .hero .hero-container .hero-content .hero-text .social-links {
     }
 
     .profile-image-container {
-        width: 180px;
-        height: 180px;
+        max-width: 180px;
     }
 
     .about-text p {
