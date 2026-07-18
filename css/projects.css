@@ -447,3 +447,9 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.about{
+    color:red;
+    font-family: algerian;
+    font-weight: bolder;
+}
