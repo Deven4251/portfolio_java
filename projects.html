@@ -1,688 +1,1164 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Java Developer</title>
-    <link rel="stylesheet" href="css/style.css?v=2.0" />
-    <link rel="stylesheet" href="css/projects.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+
+```
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
+
+<meta
+  name="description"
+  content="Projects by Devendra Mishra - Full Stack MERN and Java Developer. Explore full-stack applications, web projects, and JavaScript games."
+/>
+
+<title>Projects | Devendra Mishra</title>
+
+<!-- Global CSS -->
+<link
+  rel="stylesheet"
+  href="css/style.css?v=2.0"
+/>
+
+<!-- Projects CSS -->
+<link
+  rel="stylesheet"
+  href="css/projects.css?v=2.0"
+/>
+
+<!-- Boxicons -->
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+```
+
   </head>
-  <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Loading Projects</div>
-            <div class="loading-subtext">Preparing portfolio...</div>
-        </div>
+
+  <body class="page-projects">
+
+```
+<!-- =====================================================
+     LOADING OVERLAY
+====================================================== -->
+<div
+  class="loading-overlay"
+  id="loadingOverlay"
+>
+  <div class="loading-content">
+
+    <div class="loading-spinner"></div>
+
+    <div class="loading-text">
+      Loading Projects
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">JAVA Developer</a>
-        </div>
-        <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="nav-menu" id="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="technologies.html" class="nav-link">Technologies</a>
-          </li>
-          <li class="nav-item">
-            <a href="projects.html" class="nav-link active">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="experience.html" class="nav-link">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a href="awards.html" class="nav-link">Awards</a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://drive.google.com/file/d/1hzdR2d8MU3MfT4M-J53hO3Ddxt8FoBqw/view?usp=drive_link"
-              target="_blank"
-              class="nav-link download-btn"
-              download
-            >
-              <i class="bx bx-download"></i> Download CV
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Main Content -->
-    <div class="main-content">
-    <!-- Projects Section -->
-    <section class="projects">
-      <div class="container">
-        <div class="section-header">
-          <h1 class="section-title">My Projects</h1>
-          <p class="section-subtitle">Some of my recent work</p>
+    <div class="loading-subtext">
+      Preparing portfolio...
+    </div>
+
+  </div>
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+<nav class="navbar">
+
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <div class="nav-logo">
+      <a href="index.html">
+        JAVA Developer
+      </a>
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+    <div
+      class="hamburger"
+      id="hamburger"
+      aria-label="Toggle navigation"
+      role="button"
+      tabindex="0"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+
+    <!-- Navigation Menu -->
+    <ul
+      class="nav-menu"
+      id="nav-menu"
+    >
+
+      <li class="nav-item">
+        <a
+          href="index.html"
+          class="nav-link"
+        >
+          Home
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          href="technologies.html"
+          class="nav-link"
+        >
+          Technologies
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          href="projects.html"
+          class="nav-link active"
+          aria-current="page"
+        >
+          Projects
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          href="experience.html"
+          class="nav-link"
+        >
+          Experience
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          href="awards.html"
+          class="nav-link"
+        >
+          Awards
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          href="https://drive.google.com/file/d/1hzdR2d8MU3MfT4M-J53hO3Ddxt8FoBqw/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-link download-btn"
+        >
+          <i class="bx bx-download"></i>
+          Download CV
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+<main class="main-content">
+
+
+  <!-- ===================================================
+       PROJECTS
+  ==================================================== -->
+  <section class="projects">
+
+    <div class="container">
+
+
+      <!-- ===============================================
+           PROJECTS HEADER
+      ================================================ -->
+      <header class="projects-header">
+
+        <span class="projects-eyebrow">
+          PORTFOLIO / PROJECTS
+        </span>
+
+        <h1 class="projects-title">
+          <span>Built</span> till now
+        </h1>
+
+        <p class="projects-subtitle">
+          Grinding daily with ...<br/>
+          Collection of Full-Stack Applications, frontend projects, developer experiments, and interactive web experiences built while exploring modern web development technologies.
+        </p>
+
+      </header>
+
+
+
+      <!-- ===============================================
+           FEATURED PROJECTS
+      ================================================ -->
+      <section class="featured-projects">
+
+        <div class="projects-section-heading">
+
+          <div>
+            <span class="section-number">
+              01
+            </span>
+
+            <h2>
+              Fullstack Projects
+            </h2>
+          </div>
+
+          <span class="section-line"></span>
+
         </div>
 
-        <div class="timeline">
-          <!-- new Projects -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
+
+        <!-- =============================================
+             HANDWRITING CHAMPIONS
+        ============================================== -->
+        <article class="featured-project">
+
+          <!-- Visual -->
+          <div class="featured-project-visual">
+
+            <span class="project-year">
+              2025
+            </span>
+
+            <div class="project-icon-large">
               <i class="bx bx-pencil"></i>
             </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">Handwriting champions
-                  <span class="about" >Developer</span>
-                </h3>
-                <span class="timeline-company">offline + online coaching Website</span>
-                <span class="timeline-date">2025</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  Handwriting Champions is a full-stack handwriting improvement platform that helps students enhance their writing skills through structured lessons, interactive animations, and smooth, engaging UI. It provides an intuitive experience for students and parents, making handwriting learning simple, effective, and enjoyable.
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                      Designed a modern, responsive UI with smooth animations for an engaging learning experience
-                    </li>
-                    <li>
-                      Developed a full-stack inquiry system with secure data handling and validations
-                    </li>
-                    <li>
-                      Integrated MongoDB for persistent storage of student inquiries and communication logs
-                    </li>
-                    <li>
-                      Implemented Lottie and Framer Motion animations to enhance visual learning and interaction
-                    </li>
-                    <li>
-                      Built a structured architecture ensuring fast performance and seamless navigation across pages
-                    </li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
 
-                  <span class="tech-tag">React (Vite)</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express.js</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">Framer Motion</span>
-                  <span class="tech-tag">Lottie Animations</span>
+            <span class="featured-label">
+              FEATURED PROJECT
+            </span>
 
-              </div>
-            </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-marker">
+
+          <!-- Content -->
+          <div class="featured-project-content">
+
+            <div class="project-meta">
+
+              <span>Full Stack</span>
+
+              <span>•</span>
+
+              <span>Client Project</span>
+
+            </div>
+
+
+            <h2>
+              Handwriting Champions
+            </h2>
+
+
+            <p>
+              Handwriting Champions is a full-stack handwriting
+              improvement platform designed to help students improve
+              their writing skills through structured content,
+              interactive animations, and a smooth responsive user
+              experience.
+            </p>
+
+
+            <ul class="project-highlights">
+
+              <li>
+                Designed a modern and responsive React interface
+              </li>
+
+              <li>
+                Developed a full-stack inquiry management system
+              </li>
+
+              <li>
+                Integrated MongoDB for persistent inquiry storage
+              </li>
+
+              <li>
+                Added Framer Motion and Lottie animations
+              </li>
+
+            </ul>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Vite</span>
+
+              <span>Node.js</span>
+
+              <span>Express.js</span>
+
+              <span>MongoDB</span>
+
+              <span>Framer Motion</span>
+
+              <span>Lottie</span>
+
+            </div>
+
+
+            <div class="project-actions">
+
+              <a
+                href="https://www.handwritingchampions.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link primary"
+              >
+                Visit Project
+
+                <i class="bx bx-link-external"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =============================================
+             RYDE
+        ============================================== -->
+        <article class="featured-project reverse">
+
+          <!-- Visual -->
+          <div class="featured-project-visual">
+
+            <span class="project-year">
+              2024
+            </span>
+
+            <div class="project-icon-large">
               <i class="bx bx-car"></i>
             </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">Ryde</h3>
-                <span class="about" >Developer</span>
-                <span class="timeline-company">Car Renting Platform</span>
-                <span class="timeline-date">2024</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  Ryde is a full-stack car renting platform that allows users to
-                  search, book, and manage car rentals seamlessly. It provides
-                  an intuitive booking system, secure payments, and an admin
-                  dashboard for fleet management.
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                    Developed a responsive booking system with real-time
-                    availability
-                  </li>
-                  <li>
-                    Integrated secure authentication and role-based access for
-                    users and admins
-                  </li>
-                  <li>
-                    Built an admin dashboard to manage cars, bookings, and users
-                  </li>
-                  <li>
-                    Implemented secure payment gateway for hassle-free
-                    transactions
-                  </li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
-            </div>
+
+            <span class="featured-label">
+              MERN APPLICATION
+            </span>
+
           </div>
 
-          <!-- Project 1 -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
+
+          <!-- Content -->
+          <div class="featured-project-content">
+
+            <div class="project-meta">
+
+              <span>MERN Stack</span>
+
+              <span>•</span>
+
+              <span>Car Rental</span>
+
+            </div>
+
+
+            <h2>
+              Ryde
+            </h2>
+
+
+            <p>
+              Ryde is a full-stack car renting platform that allows
+              users to search, book, and manage vehicle rentals
+              through a responsive interface with authentication
+              and administrative functionality.
+            </p>
+
+
+            <ul class="project-highlights">
+
+              <li>
+                Responsive vehicle browsing and booking system
+              </li>
+
+              <li>
+                User authentication and role-based access
+              </li>
+
+              <li>
+                Admin dashboard for cars, users, and bookings
+              </li>
+
+              <li>
+                MongoDB-powered backend architecture
+              </li>
+
+            </ul>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Node.js</span>
+
+              <span>Express.js</span>
+
+              <span>MongoDB</span>
+
+            </div>
+
+
+            <div class="project-actions">
+
+              <a
+                href="https://ryde-updated-ever.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link primary"
+              >
+                Visit Project
+
+                <i class="bx bx-link-external"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =============================================
+             SHOPCIP
+        ============================================== -->
+        <article class="featured-project">
+
+          <!-- Visual -->
+          <div class="featured-project-visual">
+
+            <span class="project-year">
+              2024
+            </span>
+
+            <div class="project-icon-large">
               <i class="bx bx-store-alt"></i>
             </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">ShopCip</h3>
-                <span class="about" >Developer</span>
-                <span class="timeline-company">Full-Stack Web Application</span>
-                <span class="timeline-date">2024</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  ShopCip is a modern shopping platform that allows users to
-                  browse products, manage carts, and place secure orders.
-                  Designed with a focus on performance, responsiveness, and
-                  scalability.
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                    Developed intuitive product browsing and search features
-                  </li>
-                  <li>Implemented cart and order management system</li>
-                  <li>Integrated secure checkout and payment flow</li>
-                  <li>Built responsive UI with React and Tailwind CSS</li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
-            </div>
+
+            <span class="featured-label">
+              E-COMMERCE
+            </span>
+
           </div>
 
-          <!-- Project 2 -->
 
-          <!-- Project 3 -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="bx bx-building-house"></i>
+          <!-- Content -->
+          <div class="featured-project-content">
+
+            <div class="project-meta">
+
+              <span>Full Stack</span>
+
+              <span>•</span>
+
+              <span>E-Commerce</span>
+
             </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">College Website Clone</h3>
-                <span class="about">Developer</span>
-                <span class="timeline-company">Web Application</span>
-                <span class="about">Developer</span>
-                <span class="timeline-date">2023</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  A modern clone of a college website featuring responsive
-                  design, course details, faculty information, admissions
-                  section, and student resources. Built to practice frontend and
-                  backend integration with a real-world layout.
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                    Developed a fully responsive UI for seamless browsing across
-                    devices
-                  </li>
-                  <li>
-                    Implemented dynamic pages for courses, faculty, and
-                    admissions
-                  </li>
-                  <li>
-                    Added student resources section with downloadable materials
-                  </li>
-                  <li>
-                    Built reusable components to ensure scalability and
-                    maintainability
-                  </li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">React</span>
-              </div>
+
+
+            <h2>
+              ShopCip
+            </h2>
+
+
+            <p>
+              ShopCip is a MERN-based e-commerce application
+              focused on responsive product browsing, shopping
+              cart management, order processing, and scalable
+              full-stack architecture.
+            </p>
+
+
+            <ul class="project-highlights">
+
+              <li>
+                Product browsing and search functionality
+              </li>
+
+              <li>
+                Shopping cart and order management
+              </li>
+
+              <li>
+                Secure authentication architecture
+              </li>
+
+              <li>
+                Responsive modern user interface
+              </li>
+
+            </ul>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Node.js</span>
+
+              <span>Express.js</span>
+
+              <span>MongoDB</span>
+
             </div>
+
+
+            <div class="project-actions">
+
+              <a
+                href="https://shop-cip.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link primary"
+              >
+                Visit Project
+
+                <i class="bx bx-link-external"></i>
+              </a>
+
+            </div>
+
           </div>
 
-          <!-- Project 4 -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="bx bx-calculator"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">Modern Calculator</h3>
-                <span class="timeline-company">Python Application</span>
-                <span class="timeline-date">2024</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  A modern calculator built with Python, featuring a
-                  user-friendly interface, extended mathematical functions, and
-                  error-free performance. Designed with both beginners and
-                  advanced users in mind.
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                    Developed a responsive GUI with Tkinter for a sleek, modern
-                    look
-                  </li>
-                  <li>
-                    Implemented advanced mathematical operations (percentages,
-                    powers, roots)
-                  </li>
-                  <li>
-                    Added memory functions and history tracking for recent
-                    calculations
-                  </li>
-                  <li>
-                    Ensured robust error handling and smooth user experience
-                  </li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Tkinter</span>
-                <span class="tech-tag">Math Library</span>
-              </div>
-            </div>
+        </article>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           OTHER PROJECTS
+      ================================================ -->
+      <section class="other-projects">
+
+        <div class="projects-section-heading">
+
+          <div>
+
+            <span class="section-number">
+              02
+            </span>
+
+            <h2>
+              Other Projects
+            </h2>
+
           </div>
 
-          <!-- Project 5 -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="bx bx-paint-roll"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3 class="timeline-title">Wall Canvas</h3>
-                <span class="timeline-company">E-Commerce Storefront</span>
-                <span class="timeline-date">2025</span>
-              </div>
-              <div class="timeline-description">
-                <p>
-                  Wall Canvas is a sleek and modern storefront for exploring and
-                  purchasing high-quality wall art. Built with a focus on smooth
-                  UI/UX and responsive design.
-                  <strong>(Currently under development)</strong>
-                </p>
-                <ul class="timeline-achievements">
-                  <li>
-                    Designed a clean and visually appealing storefront layout
-                  </li>
-                  <li>Implemented product showcase for wall art collections</li>
-                  <li>
-                    Focused on smooth navigation and modern user experience
-                  </li>
-                  <li>
-                    Planned integration of cart and secure checkout (in
-                    progress)
-                  </li>
-                </ul>
-              </div>
-              <div class="timeline-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Tailwind CSS</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-            </div>
-          </div>
+          <span class="section-line"></span>
 
-          <!-- Project 6 -->
-          <div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-user-circle'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Personal Portfolio</h3>
-      <span class="timeline-company">Web Application</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A modern, responsive portfolio website showcasing my skills, projects, and experience.
-        Designed with smooth animations, clean UI, and mobile-first principles to highlight my work professionally.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Crafted a responsive layout with HTML, CSS, and JavaScript</li>
-        <li>Implemented smooth scroll animations and interactive UI components</li>
-        <li>Designed sections for About, Skills, Projects, and Contact</li>
-        <li>Optimized for performance and accessibility across devices</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-<!-- Weather App -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-cloud'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Weather App</h3>
-      <span class="timeline-company">Web Application</span>
-      <span class="timeline-date">2023</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A responsive weather application fetching real-time weather data using a public API.
-        Displays temperature, humidity, and conditions with a clean, modern interface.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Integrated OpenWeather API for real-time updates</li>
-        <li>Built responsive layout with location-based search</li>
-        <li>Used async/await for smooth API handling</li>
-        <li>Designed intuitive weather icons for better UX</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-      <span class="tech-tag">API</span>
-    </div>
-  </div>
-</div>
-
-<!-- Blog Platform -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-news'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Blog Platform</h3>
-      <span class="timeline-company">Full-Stack Web Application</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A blogging platform allowing users to create, edit, and share posts with
-        authentication and comment features. Built to practice MERN stack fundamentals.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented secure login/signup with JWT authentication</li>
-        <li>Created CRUD functionality for blog posts</li>
-        <li>Added commenting and likes system</li>
-        <li>Designed a clean and responsive UI</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">React</span>
-      <span class="tech-tag">Node.js</span>
-      <span class="tech-tag">Express</span>
-      <span class="tech-tag">MongoDB</span>
-    </div>
-  </div>
-</div>
-
-<!-- Chat App -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-chat'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Real-Time Chat App</h3>
-      <span class="timeline-company">MERN + Socket.io</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A real-time chat application with group and private messaging.
-        Focused on learning WebSockets and live communication.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented WebSocket communication using Socket.io</li>
-        <li>Designed group and private chat features</li>
-        <li>Integrated user authentication and profiles</li>
-        <li>Built responsive chat interface with emoji support</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">React</span>
-      <span class="tech-tag">Node.js</span>
-      <span class="tech-tag">Express</span>
-      <span class="tech-tag">MongoDB</span>
-      <span class="tech-tag">Socket.io</span>
-    </div>
-  </div>
-</div>
-
-<!-- To-Do App -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-check-square'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">To-Do List App</h3>
-      <span class="timeline-company">Productivity Tool</span>
-      <span class="timeline-date">2023</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A simple productivity app for managing daily tasks.
-        Built as a starter project to practice CRUD operations and responsive design.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented task add, update, and delete features</li>
-        <li>Used local storage for persistence</li>
-        <li>Designed clean and mobile-friendly UI</li>
-        <li>Practiced core JavaScript concepts</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-<!-- Mini Games Timeline Section -->
-
-<!-- 1. Snake Game -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-bug'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Snake Game</h3>
-      <span class="timeline-company">Classic Web Game</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A modern version of the classic Snake game with smooth controls, scoring system, and responsive design.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented dynamic snake movement and food spawning logic</li>
-        <li>Added scoring system with increasing difficulty levels</li>
-        <li>Designed responsive canvas for desktop and mobile play</li>
-        <li>Practiced real-time game updates with JavaScript intervals</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-<!-- 2. Memory Card Game -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-brain'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Memory Card Game</h3>
-      <span class="timeline-company">Web Game</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A fun memory matching game where users flip cards to find pairs, improving cognitive skills and engaging users with animations and sounds.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented card flipping logic and match detection</li>
-        <li>Added scoring system and timer for competitive gameplay</li>
-        <li>Enhanced UX with animations and hover effects</li>
-        <li>Built responsive layout for all devices</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-<!-- 3. Quiz Game -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-question-mark'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Quiz Game</h3>
-      <span class="timeline-company">Interactive Web Game</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A quiz game with multiple-choice questions, timers, and scoring. Helps test knowledge while providing a fun interactive experience.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented timer-based multiple-choice questions</li>
-        <li>Calculated score dynamically and showed results at the end</li>
-        <li>Designed interactive UI with hover effects and animations</li>
-        <li>Added option to add custom questions for practice</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-<!-- 4. Flappy Bird Clone -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-gift'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Flappy Bird Clone</h3>
-      <span class="timeline-company">Web Game</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A browser-based clone of Flappy Bird with smooth animations, collision detection, and scoring system.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented gravity, jump, and collision mechanics</li>
-        <li>Designed pipe obstacles with dynamic spacing</li>
-        <li>Scoring system for high score tracking</li>
-        <li>Responsive gameplay on desktop and mobile</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-<!-- 5. Balloon Pop Game -->
-<div class="timeline-item">
-  <div class="timeline-marker">
-    <i class='bx bx-game'></i>
-  </div>
-  <div class="timeline-content">
-    <div class="timeline-header">
-      <h3 class="timeline-title">Balloon Pop Game</h3>
-      <span class="timeline-company">Web Game</span>
-      <span class="timeline-date">2024</span>
-    </div>
-    <div class="timeline-description">
-      <p>
-        A fun balloon popping game where users click moving balloons to score points. Great for demonstrating event handling and animations.
-      </p>
-      <ul class="timeline-achievements">
-        <li>Implemented moving balloon animations with CSS and JS</li>
-        <li>Added click event listeners for scoring</li>
-        <li>Increased difficulty with speed and number of balloons</li>
-        <li>Designed colorful and engaging UI for user engagement</li>
-      </ul>
-    </div>
-    <div class="timeline-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-  </div>
-</div>
-
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-text">
-            <p>&copy; 2024 java Developer. All rights reserved.</p>
-          </div>
-          <div class="footer-social">
-            <a
-              href="https://github.com/deven4251"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/devendra-mishra-691853234/"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a
-              href="mailto:devendramishra778585@gmail.com"
-              target="_blank"
-              class="footer-social-link"
-            >
-              <i class="bx bx-envelope"></i>
-            </a>
-          </div>
         </div>
-      </div>
-    </footer>
-    </div> <!-- End main-content -->
 
-    <script src="js/script.js"></script>
+
+
+        <div class="project-grid">
+
+
+          <!-- ===========================================
+               COLLEGE WEBSITE
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-building-house"></i>
+              </div>
+
+              <span>
+                2023
+              </span>
+
+            </div>
+
+
+            <h3>
+              College Website Clone
+            </h3>
+
+
+            <p>
+              Responsive college website featuring courses,
+              faculty information, admissions, and student
+              resources.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>HTML</span>
+
+              <span>CSS</span>
+
+              <span>JavaScript</span>
+
+              <span>React</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               MODERN CALCULATOR
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-calculator"></i>
+              </div>
+
+              <span>
+                2024
+              </span>
+
+            </div>
+
+
+            <h3>
+              Modern Calculator
+            </h3>
+
+
+            <p>
+              Python calculator application featuring a Tkinter
+              interface, mathematical operations, calculation
+              history, and robust error handling.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>Python</span>
+
+              <span>Tkinter</span>
+
+              <span>Math Library</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               WALL CANVAS
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-paint-roll"></i>
+              </div>
+
+              <span class="development-status">
+                In Development
+              </span>
+
+            </div>
+
+
+            <h3>
+              Wall Canvas
+            </h3>
+
+
+            <p>
+              Modern storefront for exploring and purchasing
+              wall art with a focus on responsive design,
+              clean navigation, and modern shopping UX.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Tailwind CSS</span>
+
+              <span>JavaScript</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               PORTFOLIO
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-user-circle"></i>
+              </div>
+
+              <span>
+                2024
+              </span>
+
+            </div>
+
+
+            <h3>
+              Personal Portfolio
+            </h3>
+
+
+            <p>
+              Responsive developer portfolio showcasing
+              technologies, projects, professional experience,
+              achievements, and developer background.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>HTML</span>
+
+              <span>CSS</span>
+
+              <span>JavaScript</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               WEATHER APP
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-cloud"></i>
+              </div>
+
+              <span>
+                2023
+              </span>
+
+            </div>
+
+
+            <h3>
+              Weather App
+            </h3>
+
+
+            <p>
+              Responsive weather application fetching real-time
+              weather information and displaying temperature,
+              humidity, and current conditions.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>HTML</span>
+
+              <span>CSS</span>
+
+              <span>JavaScript</span>
+
+              <span>API</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               BLOG PLATFORM
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-news"></i>
+              </div>
+
+              <span>
+                2024
+              </span>
+
+            </div>
+
+
+            <h3>
+              Blog Platform
+            </h3>
+
+
+            <p>
+              MERN blogging application with authentication,
+              CRUD functionality for posts, comments, likes,
+              and responsive user interfaces.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Node.js</span>
+
+              <span>Express</span>
+
+              <span>MongoDB</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               CHAT APP
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-chat"></i>
+              </div>
+
+              <span>
+                2024
+              </span>
+
+            </div>
+
+
+            <h3>
+              Real-Time Chat App
+            </h3>
+
+
+            <p>
+              Real-time messaging application featuring private
+              and group conversations with WebSocket-based
+              communication.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>React</span>
+
+              <span>Node.js</span>
+
+              <span>Express</span>
+
+              <span>MongoDB</span>
+
+              <span>Socket.io</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ===========================================
+               TODO APP
+          ============================================ -->
+          <article class="project-card">
+
+            <div class="project-card-top">
+
+              <div class="project-card-icon">
+                <i class="bx bx-check-square"></i>
+              </div>
+
+              <span>
+                2023
+              </span>
+
+            </div>
+
+
+            <h3>
+              To-Do List App
+            </h3>
+
+
+            <p>
+              Lightweight productivity application for adding,
+              updating, completing, and deleting tasks with
+              local-storage persistence.
+            </p>
+
+
+            <div class="project-tech">
+
+              <span>HTML</span>
+
+              <span>CSS</span>
+
+              <span>JavaScript</span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           JAVASCRIPT GAMES
+      ================================================ -->
+      <section class="mini-projects">
+
+        <div class="projects-section-heading">
+
+          <div>
+
+            <span class="section-number">
+              03
+            </span>
+
+            <h2>
+              JavaScript Games
+            </h2>
+
+          </div>
+
+          <span class="section-line"></span>
+
+        </div>
+
+
+
+        <div class="mini-project-grid">
+
+
+          <!-- Snake Game -->
+          <article class="mini-project">
+
+            <i class="bx bx-bug"></i>
+
+            <div>
+
+              <h3>
+                Snake Game
+              </h3>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Memory Game -->
+          <article class="mini-project">
+
+            <i class="bx bx-brain"></i>
+
+            <div>
+
+              <h3>
+                Memory Card Game
+              </h3>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Quiz -->
+          <article class="mini-project">
+
+            <i class="bx bx-question-mark"></i>
+
+            <div>
+
+              <h3>
+                Quiz Game
+              </h3>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Flappy Bird -->
+          <article class="mini-project">
+
+            <i class="bx bx-gift"></i>
+
+            <div>
+
+              <h3>
+                Flappy Bird Clone
+              </h3>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Balloon Pop -->
+          <article class="mini-project">
+
+            <i class="bx bx-game"></i>
+
+            <div>
+
+              <h3>
+                Balloon Pop Game
+              </h3>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-content">
+
+
+        <!-- Copyright -->
+        <div class="footer-text">
+
+          <p>
+            &copy; 2026 Devendra Mishra. All rights reserved.
+          </p>
+
+        </div>
+
+
+        <!-- Social Links -->
+        <div class="footer-social">
+
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/deven4251"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-link"
+            aria-label="GitHub"
+          >
+            <i class="bx bxl-github"></i>
+          </a>
+
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/devendra-mishra-691853234/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-link"
+            aria-label="LinkedIn"
+          >
+            <i class="bx bxl-linkedin"></i>
+          </a>
+
+
+          <!-- Email -->
+          <a
+            href="mailto:devendramishra778585@gmail.com"
+            class="footer-social-link"
+            aria-label="Email"
+          >
+            <i class="bx bx-envelope"></i>
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script src="js/script.js"></script>
+```
+
   </body>
 </html>

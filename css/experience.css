@@ -1,304 +1,330 @@
-/* Experience Page Specific Styles */
+/* =========================================================
+   EXPERIENCE PAGE
+   Professional Dark Portfolio Theme
+   ========================================================= */
 
 .experience {
-    background:
-        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    --exp-bg: #0a0a0a;
+    --exp-surface: #111111;
+    --exp-surface-light: #171717;
+    --exp-surface-hover: #1c1c1c;
+
+    --exp-border: rgba(255, 255, 255, 0.09);
+    --exp-border-hover: rgba(0, 212, 255, 0.35);
+
+    --exp-text: #ffffff;
+    --exp-muted: #a8a8a8;
+    --exp-muted-dark: #777777;
+
+    --exp-cyan: #00d4ff;
+    --exp-orange: #ff6b35;
+    --exp-green: #10b981;
+    --exp-purple: #8b5cf6;
+
     position: relative;
+
+    min-height: 100vh;
+
+    padding: 5rem 0;
+
     overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 212, 255, 0.08),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 107, 53, 0.07),
+            transparent 35%
+        ),
+        var(--exp-bg);
 }
+
+
+/* =========================================================
+   SUBTLE BACKGROUND GRID
+   ========================================================= */
 
 .experience::before {
-    content: '';
+    content: "";
+
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
     pointer-events: none;
-    animation: corporatePulse 10s ease-in-out infinite;
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.85),
+        transparent
+    );
 }
 
-.experience::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        linear-gradient(45deg, transparent 40%, rgba(0, 212, 255, 0.02) 50%, transparent 60%),
-        linear-gradient(-45deg, transparent 40%, rgba(255, 107, 53, 0.02) 50%, transparent 60%);
-    pointer-events: none;
-    animation: corporateFlow 18s linear infinite;
-}
 
-@keyframes corporatePulse {
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
-    0%,
-    100% {
-        opacity: 0.2;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.4;
-        transform: scale(1.01);
-    }
-}
-
-@keyframes corporateFlow {
-    0% {
-        transform: translateX(-50%) translateY(-50%);
-    }
-
-    100% {
-        transform: translateX(50%) translateY(50%);
-    }
-}
-
-.experience .container {
+.experience > .container {
     position: relative;
     z-index: 2;
-}
 
-/* Tabs Container */
-.tabs-container {
-    max-width: 1000px;
+    width: min(1200px, calc(100% - 3rem));
+
     margin: 0 auto;
-    padding: 2rem 0;
 }
 
-/* Tabs Navigation */
-.tabs-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.experience .section-header {
+    max-width: 750px;
+
+    margin: 0 auto 4rem;
+
+    text-align: center;
 }
+
+
+.experience .section-title {
+    margin: 0 0 1rem;
+
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 15%,
+        var(--exp-cyan) 55%,
+        var(--exp-orange)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.experience .section-subtitle {
+    margin: 0 auto;
+
+    color: var(--exp-muted);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABS LAYOUT
+   ========================================================= */
+
+.tabs-container {
+    display: grid;
+
+    grid-template-columns: 280px minmax(0, 1fr);
+
+    gap: 2rem;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   TAB NAVIGATION
+   ========================================================= */
+
+.tabs-nav {
+    position: sticky;
+    top: 110px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.7rem;
+
+    padding: 0.7rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        ),
+        var(--exp-surface);
+
+    border: 1px solid var(--exp-border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   TAB BUTTON
+   ========================================================= */
 
 .tab-btn {
+    position: relative;
+
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    color: #ccc;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    flex-wrap: wrap; /* allow long labels to wrap instead of causing horizontal scroll */
-}
 
-.tab-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+    gap: 0.9rem;
+
     width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 53, 0.1));
-    transition: left 0.3s ease;
+
+    padding: 1rem;
+
+    color: var(--exp-muted);
+
+    background: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.tab-btn:hover::before {
-    left: 0;
-}
 
-.tab-btn:hover {
-    border-color: #00d4ff;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
-}
-
-.tab-btn.active {
-    background: linear-gradient(135deg, #00d4ff, #ff6b35);
-    border-color: transparent;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
-}
-
-.tab-btn.active::before {
-    display: none;
-}
+/* Tab icon */
 
 .tab-btn i {
-    font-size: 1.2rem;
-    position: relative;
-    z-index: 2;
+    flex-shrink: 0;
+
+    color: #777;
+
+    font-size: 1.4rem;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.tab-btn span {
-    position: relative;
-    z-index: 2;
-    white-space: normal;
-    overflow-wrap: anywhere;
+
+/* Hover */
+
+.tab-btn:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transform: translateX(3px);
 }
 
-/* Tabs Content */
+
+.tab-btn:hover i {
+    color: var(--exp-cyan);
+}
+
+
+/* Active tab */
+
+.tab-btn.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.1),
+            rgba(255, 107, 53, 0.04)
+        );
+
+    border-color: rgba(0, 212, 255, 0.2);
+}
+
+
+.tab-btn.active i {
+    color: var(--exp-cyan);
+}
+
+
+/* Active indicator */
+
+.tab-btn.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+    top: 20%;
+    bottom: 20%;
+
+    width: 3px;
+
+    background: var(--exp-cyan);
+
+    border-radius: 0 5px 5px 0;
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+
+/* =========================================================
+   TAB CONTENT
+   ========================================================= */
+
 .tabs-content {
-    position: relative;
-    min-height: 500px;
+    min-width: 0;
 }
+
 
 .tab-panel {
     display: none;
-    animation: fadeIn 0.5s ease-in-out;
 }
+
 
 .tab-panel.active {
     display: block;
+
+    animation: experienceFade 0.4s ease;
 }
 
-/* Experience Card */
-.experience-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
 
-.experience-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 107, 53, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+@keyframes experienceFade {
 
-.experience-card:hover::before {
-    opacity: 1;
-}
-
-.experience-card:hover {
-    border-color: #00d4ff;
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-}
-
-/* Experience Header */
-.experience-header {
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-.experience-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #00d4ff;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #00d4ff, #ff6b35);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.experience-company {
-    font-size: 1.3rem;
-    color: #ffffff;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.experience-date {
-    font-size: 1rem;
-    color: #ff6b35;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-/* Experience Description */
-.experience-description {
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-.experience-description p {
-    color: #ccc;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.experience-achievements {
-    list-style: none;
-    padding: 0;
-}
-
-.experience-achievements li {
-    color: #ccc;
-    margin-bottom: 0.8rem;
-    padding-left: 2rem;
-    position: relative;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-.experience-achievements li::before {
-    content: '▶';
-    position: absolute;
-    left: 0;
-    color: #00d4ff;
-    font-size: 1rem;
-    top: 0.1rem;
-}
-
-/* Experience Tech */
-.experience-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    position: relative;
-    z-index: 2;
-}
-
-.experience-tech .tech-tag {
-    padding: 0.5rem 1rem;
-    background: rgba(0, 212, 255, 0.2);
-    color: #00d4ff;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.experience-tech .tech-tag:hover {
-    background: rgba(0, 212, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
-}
-
-/* Animations */
-@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
 
     to {
@@ -307,175 +333,733 @@
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .tabs-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
+
+/* =========================================================
+   EXPERIENCE CARD
+   ========================================================= */
+
+.experience-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        ),
+        var(--exp-surface);
+
+    border: 1px solid var(--exp-border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Left accent */
+
+.experience-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--exp-cyan),
+        var(--exp-orange)
+    );
+}
+
+
+.experience-card:hover {
+    border-color: rgba(0, 212, 255, 0.18);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.32);
+}
+
+
+/* Decorative glow */
+
+.experience-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -120px;
+    right: -120px;
+
+    width: 260px;
+    height: 260px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 212, 255, 0.06),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   EXPERIENCE HEADER
+   ========================================================= */
+
+.experience-header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 2rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid var(--exp-border);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.experience-title {
+    margin: 0 0 0.65rem;
+
+    color: var(--exp-text);
+
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-weight: 700;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   COMPANY
+   ========================================================= */
+
+.experience-company {
+    display: inline-flex;
+
+    margin-bottom: 0.4rem;
+
+    color: var(--exp-cyan);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+/* Plain Developer span */
+
+.experience-company + span:not(.experience-date) {
+    margin-bottom: 0.5rem;
+
+    color: var(--exp-muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.experience-date {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 0.2rem;
+
+    color: var(--exp-muted-dark);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* Add calendar icon without changing HTML */
+
+.experience-date::before {
+    content: "▣";
+
+    margin-right: 0.45rem;
+
+    color: var(--exp-orange);
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   EXPERIENCE DESCRIPTION
+   ========================================================= */
+
+.experience-description {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 1.5rem;
+}
+
+
+.experience-description > p {
+    max-width: 850px;
+
+    margin: 0 0 1.6rem;
+
+    color: #b7b7b7;
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS LIST
+   ========================================================= */
+
+.experience-achievements {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.experience-achievements > li {
+    position: relative;
+
+    padding-left: 1.7rem;
+
+    color: #aaaaaa;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* Bullet */
+
+.experience-achievements > li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0.7rem;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--exp-cyan);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.45);
+}
+
+
+/* Strong project names */
+
+.experience-achievements strong {
+    color: #ffffff;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.experience-tech {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.6rem;
+
+    margin-top: 2rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--exp-border);
+}
+
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem 0.8rem;
+
+    color: #b8b8b8;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.tech-tag:hover {
+    color: var(--exp-cyan);
+
+    background: rgba(0, 212, 255, 0.06);
+
+    border-color: rgba(0, 212, 255, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CERTIFICATE / VISIT BUTTON
+   ========================================================= */
+
+/*
+   Your HTML currently uses:
+
+   <button class="btn wrapper">
+       <a class="nav-link">...</a>
+   </button>
+
+   This CSS makes it work visually without inheriting
+   navbar styles.
+*/
+
+.experience .btn.wrapper {
+    display: inline-flex;
+
+    margin-top: 1rem;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 9px;
+}
+
+
+.experience .btn.wrapper .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0.6rem 1rem;
+
+    color: var(--exp-cyan);
+
+    background: rgba(0, 212, 255, 0.06);
+
+    border: 1px solid rgba(0, 212, 255, 0.22);
+
+    border-radius: 9px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.experience .btn.wrapper .nav-link:hover {
+    color: #050505;
+
+    background: var(--exp-cyan);
+
+    border-color: var(--exp-cyan);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 212, 255, 0.18);
+}
+
+
+/* =========================================================
+   BUTTONS INSIDE PROJECT LIST
+   ========================================================= */
+
+.experience-achievements .btn.wrapper {
+    margin:
+        0.6rem
+        0
+        0
+        0.6rem;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   PROJECT TAB SPECIAL STYLING
+   ========================================================= */
+
+#projects .experience-achievements {
+    gap: 1rem;
+}
+
+
+#projects .experience-achievements > li {
+    padding:
+        1rem
+        1rem
+        1rem
+        2.7rem;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 12px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#projects .experience-achievements > li::before {
+    left: 1.1rem;
+    top: 1.7rem;
+}
+
+
+#projects .experience-achievements > li:hover {
+    background: rgba(0, 212, 255, 0.025);
+
+    border-color: rgba(0, 212, 255, 0.15);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .experience {
+        padding: 4rem 0;
     }
+
+
+    .tabs-container {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+    }
+
+
+    /*
+       Tabs become horizontal and scrollable.
+       Much better than squeezing four buttons.
+    */
+
+    .tabs-nav {
+        position: relative;
+        top: auto;
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        padding: 0.6rem;
+
+        scrollbar-width: thin;
+
+        scrollbar-color:
+            rgba(0, 212, 255, 0.3)
+            transparent;
+    }
+
 
     .tab-btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-        padding: 1.2rem 1.5rem;
+        flex: 0 0 auto;
+
+        width: auto;
+        min-width: 190px;
+
+        white-space: normal;
     }
 
-    .experience-card {
-        padding: 2rem;
+
+    .tab-btn:hover {
+        transform: translateY(-2px);
     }
 
-    .experience-title {
-        font-size: 1.6rem;
-    }
 
-    .experience-company {
-        font-size: 1.1rem;
-    }
+    .tab-btn.active::before {
+        top: auto;
+        bottom: -1px;
+        left: 15%;
+        right: 15%;
 
-    .experience-date {
-        font-size: 0.9rem;
-    }
+        width: auto;
+        height: 3px;
 
-    .experience-description p {
-        font-size: 1rem;
-    }
-
-    .experience-achievements li {
-        font-size: 0.9rem;
-        padding-left: 1.5rem;
-    }
-
-    .experience-tech .tech-tag {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+        border-radius: 5px 5px 0 0;
     }
 }
 
-@media (max-width: 480px) {
-    .tabs-container {
-        padding: 1rem 0;
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .experience {
+        padding: 3.5rem 0;
     }
+
+
+    .experience > .container {
+        width: min(
+            100% - 1.5rem,
+            1200px
+        );
+    }
+
+
+    .experience .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+
+    .experience .section-title {
+        font-size: clamp(
+            2rem,
+            10vw,
+            2.8rem
+        );
+    }
+
+
+    .experience .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+
+    /* Tabs */
 
     .tabs-nav {
-        margin-bottom: 2rem;
-        padding: 0 0.5rem;
+        gap: 0.45rem;
+
+        border-radius: 14px;
     }
 
+
     .tab-btn {
-        padding: 1rem;
-        font-size: 0.85rem;
+        min-width: 170px;
+
+        padding: 0.85rem;
+
+        font-size: 0.78rem;
     }
+
 
     .tab-btn i {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
+
+
+    /* Card */
 
     .experience-card {
-        padding: 1.5rem;
+        padding: 1.4rem;
+
+        border-radius: 16px;
     }
+
+
+    .experience-header {
+        margin-bottom: 1.4rem;
+
+        padding-bottom: 1.2rem;
+    }
+
 
     .experience-title {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
-    .experience-company {
-        font-size: 1rem;
+
+    .experience-description {
+        margin-top: 1.2rem;
     }
 
-    .experience-date {
+
+    .experience-description > p {
+        font-size: 0.88rem;
+
+        line-height: 1.7;
+    }
+
+
+    .experience-achievements > li {
+        padding-left: 1.5rem;
+
         font-size: 0.85rem;
+
+        line-height: 1.65;
     }
 
-    .experience-description p {
-        font-size: 0.9rem;
+
+    /* Tech */
+
+    .experience-tech {
+        margin-top: 1.5rem;
+
+        padding-top: 1.2rem;
     }
 
-    .experience-achievements li {
-        font-size: 0.85rem;
-        padding-left: 1.2rem;
+
+    .tech-tag {
+        padding: 0.45rem 0.7rem;
+
+        font-size: 0.7rem;
     }
 
-    .experience-tech .tech-tag {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
+
+    /* Project cards */
+
+    #projects .experience-achievements > li {
+        padding:
+            1rem
+            0.9rem
+            1rem
+            2.4rem;
     }
-}
 
-/* Tab Button Hover Effects */
-.tab-btn:nth-child(1):hover {
-    border-color: #00d4ff;
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
 
-.tab-btn:nth-child(2):hover {
-    border-color: #ff6b35;
-    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-}
+    #projects .experience-achievements > li::before {
+        left: 1rem;
+    }
 
-.tab-btn:nth-child(3):hover {
-    border-color: #00d4ff;
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
 
-.tab-btn:nth-child(4):hover {
-    border-color: #ff6b35;
-    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-}
+    /* Project buttons go below text */
 
-/* Loading Animation */
-.tab-panel {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
+    .experience-achievements .btn.wrapper {
+        display: flex;
 
-.tab-panel.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+        width: fit-content;
 
-/* Staggered animation for tech tags */
-.experience-tech .tech-tag {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: slideInUp 0.5s ease forwards;
-}
-
-.experience-tech .tech-tag:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.experience-tech .tech-tag:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.experience-tech .tech-tag:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.experience-tech .tech-tag:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.experience-tech .tech-tag:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-@keyframes slideInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        margin:
+            0.8rem
+            0
+            0;
     }
 }
 
-/* From Uiverse.io by david-mohseni */
-.wrapper {
-    display: inline-flex;
-    background-color: #3cbdf0;
 
-    font-family: "Poppins", sans-serif;
-    justify-content: center;
-    color: #fff;
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .experience > .container {
+        width: calc(100% - 1rem);
+    }
+
+
+    .experience-card {
+        padding: 1.15rem;
+    }
+
+
+    .tab-btn {
+        min-width: 155px;
+    }
+
+
+    .experience-title {
+        font-size: 1.15rem;
+    }
+
+
+    .tech-tag {
+        font-size: 0.67rem;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tab-panel.active {
+        animation: none;
+    }
+
+
+    .tab-btn,
+    .experience-card,
+    .tech-tag,
+    .experience .btn.wrapper .nav-link,
+    #projects .experience-achievements > li {
+        transition: none;
+    }
 }
