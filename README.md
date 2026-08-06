@@ -64,7 +64,7 @@ It is designed with a modern UI, smooth transitions, and multiple interactive se
 ---
 
 ## 🌐 Live Demo
-🔗 [View Portfolio](https://devportfo1io.netlify.app/)
+🔗 [View Portfolio](https://portfo1iodev.netlify.app/)
 
 ---
 
