@@ -40,6 +40,31 @@ function initNavigation() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the text container we want to animate
+    const aboutText = document.querySelector('.page-home .about-text');
+
+    if (aboutText) {
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If the section scrolls into view
+                if (entry.isIntersecting) {
+                    // Add the class that triggers the CSS animation
+                    entry.target.classList.add('in-view');
+
+                    // Stop observing once it has animated (so it doesn't repeat)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3 // Triggers when 30% of the element is visible
+        });
+
+        // Start observing
+        observer.observe(aboutText);
+    }
+});
 // Mobile menu functionality
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');

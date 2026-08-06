@@ -1,0 +1,429 @@
+/* =========================================================
+   HOME PAGE - ABOUT SECTION
+   DEVENDRA MISHRA PORTFOLIO
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT ISOLATION
+   ========================================================= */
+
+.page-home .about {
+    width: 100%;
+    max-width: 100%;
+    color: white;
+}
+
+
+/* =========================================================
+   19. ABOUT SECTION
+   ========================================================= */
+
+.page-home .about {
+    position: relative;
+
+    overflow: hidden;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    background:
+        linear-gradient(180deg,
+            #0b0b0b,
+            #0e0e0e);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* Background glow */
+
+.page-home .about::before {
+    content: "";
+
+    position: absolute;
+
+    left: -200px;
+    top: 50%;
+
+    width: 420px;
+    height: 420px;
+
+    transform: translateY(-50%);
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 212, 255, 0.03),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   20. ABOUT SECTION HEADER
+   ========================================================= */
+
+.page-home .about .section-header {
+    margin-bottom: 2.5rem;
+}
+
+
+/* =========================================================
+   21. ABOUT CONTENT & SCROLL ANIMATION
+   ========================================================= */
+
+/* Top-to-bottom reveal mimics line-by-line reading */
+@keyframes lineByLineReveal {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+        /* Hides from bottom up */
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        /* Fully revealed */
+        transform: translateY(0);
+    }
+}
+
+.page-home .about-content {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr) minmax(250px, 0.7fr);
+
+    gap: clamp(2rem, 4vw, 4rem);
+
+    align-items: center;
+}
+
+.page-home .about-text {
+    min-width: 0;
+}
+
+/* Base state: Hidden before scrolling into view */
+.page-home .about-text p {
+    margin: 0;
+
+    color: #999999;
+
+    font-size: 0.96rem;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.015em;
+
+    opacity: 0;
+
+    transition: color 0.3s ease;
+}
+
+/* Animated state: Triggers only when .in-view is added via JS */
+.page-home .about-text.in-view p {
+    animation: lineByLineReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Stagger the paragraphs so they don't all start exactly at the same time */
+.page-home .about-text.in-view p:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.page-home .about-text.in-view p:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.page-home .about-text.in-view p:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+
+.page-home .about-text p:hover {
+    color: #d5d5d5;
+}
+
+.page-home .about-text br {
+    display: block;
+
+    content: "";
+
+    margin-bottom: 0.65rem;
+}
+
+/* =========================================================
+   22. ABOUT STATS
+   ========================================================= */
+
+.page-home .about-stats {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+}
+
+
+/* =========================================================
+   23. STAT ITEM
+   ========================================================= */
+
+.page-home .stat-item {
+    position: relative;
+
+    padding: 1.25rem 1rem;
+
+    text-align: left;
+
+    background: transparent;
+
+    border: 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 0;
+
+    transition:
+        padding-left 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.page-home .stat-item:last-child {
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* Cyan hover indicator */
+
+.page-home .stat-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 2px;
+
+    background: #00d4ff;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+.page-home .stat-item:hover {
+    padding-left: 1.4rem;
+
+    background:
+        linear-gradient(to right,
+            rgba(0, 212, 255, 0.035),
+            transparent);
+}
+
+
+.page-home .stat-item:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   24. STAT NUMBER
+   ========================================================= */
+
+.page-home .stat-number {
+    margin-bottom: 0.2rem;
+
+    color: #00d4ff;
+
+    font-size:
+        clamp(1.7rem,
+            3.3vw,
+            2.3rem);
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   25. STAT LABEL
+   ========================================================= */
+
+.page-home .stat-label {
+    color: #fefefe;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MEDIA QUERIES - ABOUT
+   ========================================================= */
+
+/* Tablet / Small Laptop */
+@media (max-width: 991px) {
+
+    .page-home .about {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+
+    .page-home .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 2.25rem;
+    }
+
+
+    .page-home .about-text {
+        text-align: center;
+    }
+
+
+    .page-home .about-stats {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .page-home .stat-item {
+        padding:
+            1.2rem 0.8rem;
+
+        text-align: center;
+
+        border-top: 0;
+
+        border-right:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .page-home .stat-item:last-child {
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+
+    .page-home .stat-item:hover {
+        padding-left: 0.8rem;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 575px) {
+
+    .page-home .about {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+
+    .page-home .about .section-header {
+        margin-bottom: 2rem;
+    }
+
+
+    .page-home .about-text p {
+        font-size: 0.88rem;
+
+        line-height: 1.7;
+
+        /* Allow multiline wrap on small screens so long sentences don't overflow */
+        white-space: normal;
+    }
+
+    .page-home .about-text {
+        text-align: left;
+    }
+
+
+    .page-home .about-stats {
+        grid-template-columns: 1fr;
+
+        border: 0;
+    }
+
+
+    .page-home .stat-item {
+        padding:
+            1.1rem 0.8rem;
+
+        text-align: left;
+
+        border-right: 0;
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .page-home .stat-item:last-child {
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .page-home .stat-item:hover {
+        padding-left: 1.1rem;
+    }
+
+}
+
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+
+    .page-home .about {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+}
+
+
+/* Reduced Motion / Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .page-home .stat-item,
+    .page-home .about-text,
+    .page-home .about-text p {
+        transition: none;
+        animation: none;
+        white-space: normal;
+        border-right: 0;
+        max-width: 100%;
+    }
+
+}
